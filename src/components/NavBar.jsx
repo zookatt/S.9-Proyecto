@@ -12,7 +12,7 @@ export const NavBar = () => {
                     <Link to="/about">About</Link>
                 </li>
                 <li>
-                    <Link to="/design"><button button className='btn btn-secondary font-bold bg-SuperPink hover:bg-YellowSun hover:text-VeryBlack'>Design Now</button></Link>
+                    <Link to="https://customizer-three-js-bfxb.vercel.app/"><button button className='btn btn-secondary font-bold bg-SuperPink hover:bg-YellowSun hover:text-VeryBlack'>Design Now</button></Link>
                 </li>
                 <li>
                     <Link to="/products">Products</Link>
