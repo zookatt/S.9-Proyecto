@@ -8,7 +8,11 @@ export const FooterBottom = () => {
 
             <div className='pl-6 mb-4 text-start' >
                 <h2 className='font-bold  hover:text-SuperPink cursor-pointer text-3xl max-w-xs '>Torino Print</h2>
-                <p className='text-white font-bold mt-2'>Choose the design, <br /> we print it for you.</p>
+                <p className='text-white font-bold mt-2' style={{
+                    background: 'linear-gradient(to right, #69C7EA 20%, #E8D20E 50%, #D71987 80%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent'
+                }}>Choose the design, <br /> we print it for you.</p>
             </div>
             <div className='pl-6 mb-4'>
                 <h2 className='font-bold hover:text-SuperPink cursor-pointer text-2xl max-w-xs  '>Visit us</h2>

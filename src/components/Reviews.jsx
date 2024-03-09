@@ -9,5 +9,5 @@ export const Reviews = () => {
 
 //https://mybusiness.googleapis.com/v4/accounts/{accountId}/locations/ChIJ1X-Zm8KipBIRX5oB_SGG1UY/reviews
 //falta account id
-//https://mybusiness.googleapis.com/v4/accounts/{accountId}/locations/ChIJ1X-Zm8KipBIRX5oB_SGG1UY/reviews
-//falta account id
+17054405995437320540
+//https://mybusiness.googleapis.com/v4/accounts/17054405995437320540/locations/ChIJ1X-Zm8KipBIRX5oB_SGG1UY/reviews
