@@ -9,7 +9,10 @@ import { downloadCanvasToImage, reader } from '../config/helpers';
 import { EditorTabs, FilterTabs, DecalTypes } from '../config/constants';
 import { fadeAnimation, slideAnimation } from '../config/motion';
 import { CustomButton, AIPicker, ColorPicker, FilePicker, Tab } from '../components';
-
+import { Shirt } from '../canvasModel/Shirt';
+import { Mug } from '../canvasModel/Mug';
+//import { Mug } from '../canvasModel/Mug'
+//import { Shirt } from '../canvasModel/Shirt';
 
 
 export const Customiser = () => {
@@ -26,6 +29,21 @@ export const Customiser = () => {
         stylishShirt: false,
     });
 
+    //switch between options
+    const [model, setModel] = useState('shirt');
+
+    const renderModel = () => {
+        switch (model) {
+            case 'shirt':
+                return <Shirt />
+            case 'mug':
+                return <Mug />
+            default:
+                return null;
+        }
+
+    };
+
     // show tab content depending on the activeTab
     const generateTabContent = () => {
         switch (activeEditorTab) {
@@ -39,6 +57,7 @@ export const Customiser = () => {
                 />
 
             // Es posible que no voy a usar AiPicker
+            //cambiarlo por usar imagenes de galeria
             case "aipicker":
                 return <AIPicker
                     prompt={prompt}
@@ -148,6 +167,22 @@ export const Customiser = () => {
         <AnimatePresence>
             {!snap.intro && (
                 <>
+
+                    <div className='mt-4 flex flex-col gap-3 mb-5'>
+                        <CustomButton
+                            type="filled"
+                            title="T-Shirt"
+                            handleClick={() => renderModel('shirt')}
+                            customStyles="w-fit px-4 py-2.5 font-bold text-sm"
+                        />
+                        <CustomButton
+                            type="filled"
+                            title="Mug"
+                            handleClick={() => renderModel('mug')}
+                            customStyles="w-fit px-4 py-2.5 font-bold text-sm"
+                        />
+                    </div>
+
                     <motion.div key="custom" className="absolute top-0 left z-10" {...slideAnimation('left')}>
 
                         <div className="flex items-center min-h-screen">
@@ -163,12 +198,6 @@ export const Customiser = () => {
 
 
                     </motion.div>
-                    {/* <motion.div className="absolute z-10 top-5 right-5" {...fadeAnimation}>
-
-
-
-                    </motion.div> */}
-
 
                     <motion.div className="filtertabs-container" {...slideAnimation('up')}>
                         {FilterTabs.map((tab) => (
