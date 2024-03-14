@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useSnapshot } from 'valtio';
 
+import { GalleryImages } from '../config/constants';
+
 import config from '../config/config';
 import state from '../store';
 import { download } from '../assets';
 import { downloadCanvasToImage, reader } from '../config/helpers';
 import { EditorTabs, FilterTabs, DecalTypes } from '../config/constants';
 import { fadeAnimation, slideAnimation } from '../config/motion';
-import { CustomButton, AIPicker, ColorPicker, FilePicker, Tab } from '../components';
+import { CustomButton, GaleryPicker, ColorPicker, FilePicker, Tab } from '../components';
 import { Shirt } from '../canvasModel/Shirt';
 import { Mug } from '../canvasModel/Mug';
 //import { Mug } from '../canvasModel/Mug'
@@ -18,8 +20,7 @@ import { Mug } from '../canvasModel/Mug';
 export const Customiser = () => {
     const snap = useSnapshot(state);
     const [file, setFile] = useState('');
-    const [prompt, setPrompt] = useState('');
-    const [generatingImg, setGeneratingImg] = useState(false);
+    const [image, setImage] = useState('Ring');
 
     const [design, setDesign] = useState(null);
 
@@ -32,17 +33,26 @@ export const Customiser = () => {
     //switch between options
     const [model, setModel] = useState('shirt');
 
-    const renderModel = () => {
-        switch (model) {
-            case 'shirt':
-                return <Shirt />
-            case 'mug':
-                return <Mug />
-            default:
-                return null;
-        }
 
+
+    const [selectedImage, setSelectedImage] = useState(null);
+    // Manejador para seleccionar una imagen
+    const onSelectImage = (image) => {
+        setSelectedImage(image);
+        // Aquí puedes realizar cualquier acción adicional con la imagen seleccionada, como cargarla en otro componente, etc.
+        console.log('Imagen seleccionada:', image);
     };
+    // const renderModel = () => {
+    //     switch (model) {
+    //         case 'shirt':
+    //             return <Shirt />
+    //         case 'mug':
+    //             return <Mug />
+    //         default:
+    //             return null;
+    //     }
+
+    // };
 
     // show tab content depending on the activeTab
     const generateTabContent = () => {
@@ -55,15 +65,13 @@ export const Customiser = () => {
                     setFile={setFile}
                     readFile={readFile}
                 />
-
-            // Es posible que no voy a usar AiPicker
-            //cambiarlo por usar imagenes de galeria
-            case "aipicker":
-                return <AIPicker
-                    prompt={prompt}
-                    setPrompt={setPrompt}
-                    generatingImg={generatingImg}
-                    handleSubmit={handleSubmit}
+            case "galerypicker":
+                return <GaleryPicker
+                    type={file}
+                    setFile={setFile}
+                    selectedImage={selectedImage}
+                    onSelectImage={onSelectImage}
+                    readFile={readFile}
                 />
 
             default:
@@ -71,32 +79,7 @@ export const Customiser = () => {
         }
     }
 
-    const handleSubmit = async (type) => {
-        if (!prompt) return alert("Please enter a prompt");
 
-        try {
-            setGeneratingImg(true);//call our backend to generate an ai image
-
-            const response = await fetch('https://t-shirt-customizer-f0m6.onrender.com/api/v1/dalle', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    prompt,
-                })
-            })
-
-            const data = await response.json();
-
-            handleDecals(type, `data:image/png;base64,${data.photo}`)
-        } catch (error) {
-            alert(error)
-        } finally {
-            setGeneratingImg(false);
-            setActiveEditorTab("");
-        }
-    }
 
     const handleDecals = (type, result) => {
         const decalType = DecalTypes[type];
@@ -136,7 +119,32 @@ export const Customiser = () => {
                 handleDecals(type, result);
                 setActiveEditorTab("");
             })
+
+
     }
+
+    // const readFile = (type) => {
+    //     if (type === 'logo' || type === 'full') {
+    //         // Si el tipo es 'logo' o 'full', encuentra la imagen correspondiente en GalleryImages
+    //         const image = GalleryImages.find(image => image.type === type);
+    //         if (image) {
+    //             onSelectImage(image); // Llama a la función para seleccionar la imagen
+    //         } else {
+    //             console.error('Image not found in GalleryImages:', type);
+    //         }
+    //     } else {
+    //         // Si el tipo es otro, realiza la lógica de lectura como antes
+    //         reader(file)
+    //             .then((result) => {
+    //                 handleDecals(type, result);
+    //                 setActiveEditorTab("");
+    //             })
+    //             .catch(error => {
+    //                 console.error('Error reading file:', error);
+    //             });
+    //     }
+
+    // }
 
     const saveDesignToFile = async () => {
         try {
@@ -168,7 +176,7 @@ export const Customiser = () => {
             {!snap.intro && (
                 <>
 
-                    <div className='mt-4 flex flex-col gap-3 mb-5'>
+                    {/* <div className='mt-4 flex flex-col gap-3 mb-5'>
                         <CustomButton
                             type="filled"
                             title="T-Shirt"
@@ -181,7 +189,7 @@ export const Customiser = () => {
                             handleClick={() => renderModel('mug')}
                             customStyles="w-fit px-4 py-2.5 font-bold text-sm"
                         />
-                    </div>
+                    </div> */}
 
                     <motion.div key="custom" className="absolute top-0 left z-10" {...slideAnimation('left')}>
 
@@ -205,6 +213,9 @@ export const Customiser = () => {
                         ))}
 
                     </motion.div>
+
+
+
                     <div className='mt-4 flex flex-wrap gap-3 mb-5'>
                         <CustomButton type="filled"
                             title="Go Back"

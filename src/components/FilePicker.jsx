@@ -6,6 +6,7 @@ import { CustomButton } from './CustomButton'
 export const FilePicker = ({ file, setFile, readFile }) => {
     return (
         <div className='filepicker-container'>
+            <h1 className='text-center text-[12px] mb-1'>Upload your design:</h1>
             <div className='flex-1 flex flex-col'>
                 <input id='file-upload'
                     type='file'

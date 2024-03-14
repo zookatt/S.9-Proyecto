@@ -1,12 +1,12 @@
 import { CustomButton } from "./CustomButton";
-import { AIPicker} from "./AIPicker";
+import { GaleryPicker} from "./GaleryPicker";
 import { ColorPicker } from "./ColorPicker";
 import { FilePicker } from "./FilePicker";
 import { Tab } from "./Tab";
 
 export { 
     CustomButton,
-    AIPicker, 
+    GaleryPicker, 
     ColorPicker, 
     FilePicker, 
     Tab,

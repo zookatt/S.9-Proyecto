@@ -47,8 +47,8 @@ export const About = () => {
                     WebkitTextFillColor: 'transparent'
                 }}>DTF: Direct Transfer to Film</h2>
             </div>
-            <div className="w-1/2 flex flex-col justify-center">
-                <h2 className="text-4xl font-bold text-center mt-5 mb-4" style={{
+            <div className="sm:w-1/2 flex flex-col justify-center mx-auto">
+                <h2 className="text-5xl font-bold text-center mt-5 mb-4" style={{
                     background: 'linear-gradient(to right, #0B4E9C 30%, #E8D20E 50%, #D71987 90%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent'

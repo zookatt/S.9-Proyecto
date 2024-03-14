@@ -1,0 +1,39 @@
+
+[
+    {
+      "id": "01",
+      "customer": "Joseph Perry Thorne",
+      "review": "Compré una camiseta personalizada y me encantó el resultado. Las chicas de la tienda, Daiana y Claudia, me ayudaron en el diseño de acuerdo a lo que tenía en mente y fue el regalo perfecto!! Muchas gracias!!",
+      "img": "customerslogo/customer_1.png"
+    },
+    {
+      "id": "02",
+      "customer": "Junior Ramirez Machado",
+      "review": "Hace una semana hice unas camisetas personalizadas en la tienda. Buena atención y nos ha gustado muchísimo. Gracias por todo Dayanna",
+      "img": "customerslogo/customer_2.png"
+    },
+    {
+      "id": "03",
+      "customer": "David Criado",
+      "review": "Fui a imprimir un llavero con mi diseño y el resultado es impecable ✨ y el servicio es muy bueno y amable.",
+      "img": "customerslogo/customer_3.png"
+    },
+    {
+      "id": "04",
+      "customer": "Daiana P",
+      "review": "Personal súper amable, diseños espectaculares!!! De mis tiendas favs!!!",
+      "img": "customerslogo/customer_4.png"
+    },
+    {
+      "id": "05",
+      "customer": "Dashie Dash",
+      "review": "Personal súper amable, diseños espectaculares!!! De mis tiendas favs!!!",
+      "img": "customerslogo/customer_5.png"
+    },
+    {
+      "id": "06",
+      "customer": "Colbert Helbert Alva Cépeda",
+      "review": "Me gusto mucho sus diseños crearivos en las camisetas. Tambien podemos llevar nuestros propios diseños y estamparlos.",
+      "img": "customerslogo/customer_6.png"
+    }
+  ]

@@ -35,7 +35,7 @@ export const Shirt = () => {
                 {snap.isLogoTexture && (
                     <Decal position={[0, 0.04, 0.15]}
                         rotation={[0, 0, 0]}
-                        scale={0.15}
+                        scale={0.23}
                         map={logoTexture}
                         mapAnisotropy={16}
                         depthTest={false}
