@@ -6,10 +6,10 @@ import download from "./download.png";
 import logoShirt from "./logo-tshirt.png";
 import stylishShirt from "./stylish-tshirt.png";
 
-import battery from "./battery.png";
-import wifi from "./wifi.png";
+import sagrada from "./sagrada.png";
+import lama from "./lama.png";
 import red from "./red.png";
-import bella from "./bella.png";
+import capy from "./capy.png";
 import ring from "./ring.png";
 
-export { galery, fileIcon, swatch, download, logoShirt, stylishShirt, battery, wifi, red, bella, ring};
+export { galery, fileIcon, swatch, download, logoShirt, stylishShirt, sagrada, lama, red, capy, ring};

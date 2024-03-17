@@ -16,8 +16,15 @@ import { Mug } from '../canvasModel/Mug';
 //import { Mug } from '../canvasModel/Mug'
 //import { Shirt } from '../canvasModel/Shirt';
 
+import { Link, useNavigate } from 'react-router-dom';
+import { useContext } from "react";
+import { authContext } from "../context/authContext";
 
 export const Customiser = () => {
+
+    const navigate = useNavigate()
+    const { userLoggedIn } = useContext(authContext);
+
     const snap = useSnapshot(state);
     const [file, setFile] = useState('');
     const [image, setImage] = useState('Ring');
@@ -33,13 +40,15 @@ export const Customiser = () => {
     //switch between options
     const [model, setModel] = useState('shirt');
 
-
+    const openModal = () => {
+        document.getElementById('my_modal_2').showModal();
+    };
 
     const [selectedImage, setSelectedImage] = useState(null);
     // Manejador para seleccionar una imagen
     const onSelectImage = (image) => {
         setSelectedImage(image);
-        // Aquí puedes realizar cualquier acción adicional con la imagen seleccionada, como cargarla en otro componente, etc.
+        //readFile(type, image.src);
         console.log('Imagen seleccionada:', image);
     };
     // const renderModel = () => {
@@ -67,8 +76,7 @@ export const Customiser = () => {
                 />
             case "galerypicker":
                 return <GaleryPicker
-                    type={file}
-                    setFile={setFile}
+
                     selectedImage={selectedImage}
                     onSelectImage={onSelectImage}
                     readFile={readFile}
@@ -120,31 +128,8 @@ export const Customiser = () => {
                 setActiveEditorTab("");
             })
 
-
     }
 
-    // const readFile = (type) => {
-    //     if (type === 'logo' || type === 'full') {
-    //         // Si el tipo es 'logo' o 'full', encuentra la imagen correspondiente en GalleryImages
-    //         const image = GalleryImages.find(image => image.type === type);
-    //         if (image) {
-    //             onSelectImage(image); // Llama a la función para seleccionar la imagen
-    //         } else {
-    //             console.error('Image not found in GalleryImages:', type);
-    //         }
-    //     } else {
-    //         // Si el tipo es otro, realiza la lógica de lectura como antes
-    //         reader(file)
-    //             .then((result) => {
-    //                 handleDecals(type, result);
-    //                 setActiveEditorTab("");
-    //             })
-    //             .catch(error => {
-    //                 console.error('Error reading file:', error);
-    //             });
-    //     }
-
-    // }
 
     const saveDesignToFile = async () => {
         try {
@@ -222,10 +207,35 @@ export const Customiser = () => {
                             handleClick={() => state.intro = true}
                             customStyles="w-fit px-4 py-2.5 font-bold text-sm" />
 
+
                         <CustomButton type="outline"
                             title="Save Your Design"
-                            handleClick={saveDesignToFile}
+                            handleClick={userLoggedIn ? saveDesignToFile : openModal}
                             customStyles="w-fit px-4 py-2.5 font-bold text-sm" />
+
+
+                        {!userLoggedIn && (
+                            <>
+                                <button className="btn hidden" onClick={() => openModal}>open modal</button>
+                                <dialog id="my_modal_2" className="modal">
+                                    <div className="modal-box justify-center">
+                                        <img src="{cookie}" alt="cookie" className=' mb-6' style={{ display: "block", margin: "0 auto", width: "70px" }} />
+                                        <h3 className="font-bold text-lg text-center">Please, log in to save your design</h3>
+                                        <div className="modal-action">
+                                            <Link to="/login"><button type="button" className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-DarkBlue disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                                                Log In
+                                            </button></Link>
+                                            <Link to="/signup"><button type="button" className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-SuperPink disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                                                Sign Up
+                                            </button></Link>
+                                            <form method="dialog">
+                                                <button className="btn">Close</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </dialog >
+                            </>
+                        )}
                     </div>
                 </>
             )}

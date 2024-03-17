@@ -9,6 +9,9 @@ import { Products } from "./pages/Products.jsx"
 import { Design } from "./pages/Design.jsx"
 import { Contact } from "./pages/Contact.jsx"
 import { AuthenticationContext } from "./context/AuthenticationContext.jsx";
+import { UserLogged } from "./pages/UserLogged.jsx";
+import ProtectedRoute from "./components/ProtectedRoutes.jsx";
+
 function App() {
 
   return (
@@ -24,6 +27,9 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/design" element={<Design />} />
+            <Route element={<ProtectedRoute redirectPath="/login" />}>
+              <Route path="/user" element={<UserLogged />} />
+            </Route>
           </Routes>
           <Footer />
         </main>

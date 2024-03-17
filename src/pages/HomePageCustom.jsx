@@ -27,7 +27,7 @@ export const HomePageCustom = () => {
                                     WebkitBackgroundClip: 'text',
                                     WebkitTextFillColor: 'transparent'
                                 }}>
-                                    PRINT <br className='xl:hidden' /> YOUR <br className='xl:hidden' /> DREAM.
+                                    PRINT <br className='xl:hidden' /> YOUR <br className='xl:hidden' /> DREAM
                                 </span>
                             </h1>
                         </motion.div>

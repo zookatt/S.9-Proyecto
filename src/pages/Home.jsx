@@ -17,7 +17,7 @@ export const Home = () => {
             <Reviews />
 
             {/* Open the modal using document.getElementById('ID').showModal() method */}
-            <button className="btn hidden" onClick={() => document.getElementById('my_modal_1').showModal()}>open modal</button>
+            {/* <button className="btn hidden" onClick={() => document.getElementById('my_modal_1').showModal()}>open modal</button>
             <dialog id="my_modal_1" className="modal">
                 <div className="modal-box justify-center">
                     <img src={cookie} alt="cookie" className=' mb-6' style={{ display: "block", margin: "0 auto", width: "70px" }} />
@@ -25,12 +25,12 @@ export const Home = () => {
                     <p className="py-4">Cookies help us deliver the best experience on our website. By using our website, you agree to the use of cookies. {" "}Please, accept these sweeties to continue enjoying our site!</p>
                     <div className="modal-action">
                         <form method="dialog">
-                            {/* if there is a button in form, it will close the modal */}
                             <button className="btn">Accept</button>
                         </form>
                     </div>
                 </div>
-            </dialog >
+            </dialog > */}
+
         </div >
     )
 }

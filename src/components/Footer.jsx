@@ -17,7 +17,10 @@ export const Footer = () => {
                             <li><input type="text" placeholder="Full Name" className="input input-bordered input-warning mb-3 h-[35px] sm:w-3/4 w-full" /></li>
                             <li><input type="email" placeholder="Email" className="input input-bordered input-secondary h-[35px] mb-3 sm:w-3/4 w-full" /></li>
                             <li><input type="phone" placeholder="Phone number" className="input input-bordered input-primary mb-3 sm:w-3/4 w-full h-[35px] " /></li>
-                            <li><input type="message" placeholder="Type your message here" className="input input-bordered input-accent mb-3 sm:w-3/4 w-full h-[200px] " /></li>
+                            <li><input type="message" placeholder="Type your message here" className="input input-bordered input-accent mb-3 sm:w-3/4 w-full h-[100px] " /></li>
+                            <li><label className="block mb-2 text-sm font-medium text-white dark:text-white" htmlFor="file_input">Upload file</label>
+                                <input className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="file_input" type="file" /></li>
+                            <li className="flex text-white justify-center mb-2"><input type="checkbox" className="mx-3" /><p>Accept our Privacy Policy</p></li>
                             <button className="btn btn-info sm:w-3/4 w-full ">Send</button>
                         </ul>
                     </div>

@@ -31,12 +31,12 @@ export const SignUp = () => {
             try {
                 await doCreateUserWithEmailAndPassword(email, password);
                 updateUserLoggedIn({ name: email });
-                setAlertMessage('Welcome to Star Wars, new jedi!');
+                setAlertMessage('Welcome to Torino Print!');
                 setAlertType('alert-success');
                 setShowAlert(true);
-                navigate('/starships');
+                navigate('/user');
             } catch (error) {
-                setAlertMessage('Jedi with this email has already exists. Please, try again.');
+                setAlertMessage('User with this email has already exists. Please, try again.');
                 setAlertType('alert-warning');
                 setShowAlert(true);
 
@@ -54,7 +54,7 @@ export const SignUp = () => {
 
     return (
         <div>
-            <div className="relative flex flex-col justify-center h-screen overflow-hidden">
+            {/* <div className="relative flex flex-col justify-center h-screen overflow-hidden">
                 <div className="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-lg">
                     <h1 className="text-3xl font-semibold text-center text-SuperPink mb-3">Sign up form</h1>
                     <form className="space-y-4">
@@ -82,8 +82,58 @@ export const SignUp = () => {
                         </div>
                     </form>
                 </div>
-            </div>
+            </div> */}
 
+            <div className="container mx-auto text-center">
+                <div className="lg:offset-3 lg:col-6">
+                    <form className="container">
+                        <div className="bg-white rounded-lg shadow-lg">
+                            <div className="bg-gray-800 text-white py-4 px-6">
+                                <h1 className="text-2xl font-bold">User Registration</h1>
+                            </div>
+                            <div className="px-6 py-4 sm:w-1/2 mx-auto">
+                                {showAlert && (
+                                    <div className={`alert ${alertType}`} role="alert">
+                                        {alertMessage}
+                                    </div>
+                                )}
+                                {!showAlert && (
+                                    <>
+                                        <div className="lg:col-12">
+                                            <div className="mb-4">
+                                                <label><span className="errmsg"></span></label>
+                                                <input type="text" placeholder="Name" className="bg-gray-200 px-4 py-2 rounded-md w-full" autoComplete="name" required value={name} onChange={(e) => { setName(e.target.value) }} />
+                                            </div>
+                                        </div>
+                                        <div className="lg:col-12">
+                                            <div className="mb-4">
+                                                <label><span className="errmsg"></span></label>
+                                                <input type="email" placeholder="Email" className="bg-gray-200 px-4 py-2 rounded-md w-full" autoComplete="email" required value={email} onChange={(e) => { setEmail(e.target.value) }} />
+                                            </div>
+                                        </div>
+                                        <div className="lg:col-12">
+                                            <div className="mb-4">
+                                                <label><span className="errmsg"></span></label>
+                                                <input disabled={isRegistering} type="password" placeholder="Password" className="bg-gray-200 px-4 py-2 rounded-md w-full" autoComplete="new-password" required value={password} onChange={(e) => { setPassword(e.target.value) }} />
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
+                                <div className="mb-2">
+                                    <button onClick={onSubmit} type="submit" disabled={isRegistering} className="bg-gray-800 text-white px-4 py-2 rounded-md mr-1">Sign Up</button>
+                                    <span className="text-gray-600">or</span>
+                                    <Link to={'/login'} className="bg-yellow-500 text-white px-4 py-2 rounded-md ml-2">Log In</Link>
+                                </div>
+                            </div>
+                            <div className="text-start text-gray-600 px-6 py-4">
+                                <p className="text-sm"><strong>Star Wars is part of The Walt Disney Family of Companies.</strong></p>
+                                <p className="text-sm">This email and password lets you seamlessly log into services and experiences across The Walt Disney Family of Companies, such as ESPN, Walt Disney World, Marvel, and more.</p>
+                                <p className="text-sm">If you've used your email with one of our services, please use it here too.</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     )
 }
