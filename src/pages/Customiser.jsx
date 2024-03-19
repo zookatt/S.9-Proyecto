@@ -24,11 +24,11 @@ export const Customiser = () => {
 
     const navigate = useNavigate()
     const { userLoggedIn } = useContext(authContext);
-
+    const [prompt, setPrompt] = useState('');
     const snap = useSnapshot(state);
     const [file, setFile] = useState('');
     const [image, setImage] = useState('Ring');
-
+    const [generatingImg, setGeneratingImg] = useState(false);
     const [design, setDesign] = useState(null);
 
     const [activeEditorTab, setActiveEditorTab] = useState("");
@@ -77,9 +77,14 @@ export const Customiser = () => {
             case "galerypicker":
                 return <GaleryPicker
 
-                    selectedImage={selectedImage}
-                    onSelectImage={onSelectImage}
-                    readFile={readFile}
+                    // file={file}
+                    // setFile={setFile}
+                    // readFile={readFile}
+
+                    prompt={prompt}
+                    setPrompt={setPrompt}
+                    generatingImg={generatingImg}
+                    handleSubmit={handleSubmit}
                 />
 
             default:
@@ -87,7 +92,19 @@ export const Customiser = () => {
         }
     }
 
+    const handleSubmit = async (type, selectedImage) => {
+        if (!selectedImage) return alert("Please select an image");
+        try {
+            onSelectImage(image);// call our backend to generate an ai image
+            // Assuming you want to send the selected image directly
+            handleDecals(type, selectedImage);
+        } catch (error) {
+            alert(error);
+        } finally {
 
+            setActiveEditorTab("");
+        }
+    };
 
     const handleDecals = (type, result) => {
         const decalType = DecalTypes[type];
@@ -157,11 +174,14 @@ export const Customiser = () => {
     }
 
     return (
-        <AnimatePresence>
-            {!snap.intro && (
-                <>
+        <>
 
-                    {/* <div className='mt-4 flex flex-col gap-3 mb-5'>
+            <AnimatePresence>
+
+                {!snap.intro && (
+                    <>
+
+                        {/* <div className='mt-4 flex flex-col gap-3 mb-5'>
                         <CustomButton
                             type="filled"
                             title="T-Shirt"
@@ -176,70 +196,72 @@ export const Customiser = () => {
                         />
                     </div> */}
 
-                    <motion.div key="custom" className="absolute top-0 left z-10" {...slideAnimation('left')}>
 
-                        <div className="flex items-center min-h-screen">
-                            <div className='editortabs-container tabs'>
-                                {EditorTabs.map((tab) => (
-                                    <Tab key={tab.name}
-                                        tab={tab}
-                                        handleClick={() => setActiveEditorTab(tab.name)} />
-                                ))}
-                                {generateTabContent()}
+                        <motion.div key="custom" className="absolute top-0 left z-10" {...slideAnimation('left')}>
+
+                            <div className="flex items-center min-h-screen">
+                                <div className='editortabs-container tabs'>
+                                    {EditorTabs.map((tab) => (
+                                        <Tab key={tab.name}
+                                            tab={tab}
+                                            handleClick={() => setActiveEditorTab(tab.name)} />
+                                    ))}
+                                    {generateTabContent()}
+                                </div>
                             </div>
-                        </div>
 
 
-                    </motion.div>
+                        </motion.div>
 
-                    <motion.div className="filtertabs-container" {...slideAnimation('up')}>
-                        {FilterTabs.map((tab) => (
-                            <Tab key={tab.name} tab={tab} isFilterTab isActiveTab={activeFilterTab[tab.name]} handleClick={() => handleActiveFilterTab(tab.name)} />
-                        ))}
+                        <motion.div className="filtertabs-container" {...slideAnimation('up')}>
+                            {FilterTabs.map((tab) => (
+                                <Tab key={tab.name} tab={tab} isFilterTab isActiveTab={activeFilterTab[tab.name]} handleClick={() => handleActiveFilterTab(tab.name)} />
+                            ))}
 
-                    </motion.div>
-
-
-
-                    <div className='mt-4 flex flex-wrap gap-3 mb-5'>
-                        <CustomButton type="filled"
-                            title="Go Back"
-                            handleClick={() => state.intro = true}
-                            customStyles="w-fit px-4 py-2.5 font-bold text-sm" />
+                        </motion.div>
 
 
-                        <CustomButton type="outline"
-                            title="Save Your Design"
-                            handleClick={userLoggedIn ? saveDesignToFile : openModal}
-                            customStyles="w-fit px-4 py-2.5 font-bold text-sm" />
+
+                        <div className='mt-4 flex flex-wrap gap-3 mb-5 md:w-1/2 mx-auto'>
+                            <CustomButton type="filled"
+                                title="Go Back"
+                                handleClick={() => state.intro = true}
+                                customStyles="w-fit px-4 py-2.5 font-bold text-sm" />
 
 
-                        {!userLoggedIn && (
-                            <>
-                                <button className="btn hidden" onClick={() => openModal}>open modal</button>
-                                <dialog id="my_modal_2" className="modal">
-                                    <div className="modal-box justify-center">
-                                        <img src="{cookie}" alt="cookie" className=' mb-6' style={{ display: "block", margin: "0 auto", width: "70px" }} />
-                                        <h3 className="font-bold text-lg text-center">Please, log in to save your design</h3>
-                                        <div className="modal-action">
-                                            <Link to="/login"><button type="button" className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-DarkBlue disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
-                                                Log In
-                                            </button></Link>
-                                            <Link to="/signup"><button type="button" className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-SuperPink disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
-                                                Sign Up
-                                            </button></Link>
-                                            <form method="dialog">
-                                                <button className="btn">Close</button>
-                                            </form>
+                            <CustomButton type="outline"
+                                title="Save Your Design"
+                                handleClick={userLoggedIn ? saveDesignToFile : openModal}
+                                customStyles="w-fit px-4 py-2.5 font-bold text-sm" />
+
+
+                            {!userLoggedIn && (
+                                <>
+                                    <button className="btn hidden" onClick={() => openModal}>open modal</button>
+                                    <dialog id="my_modal_2" className="modal">
+                                        <div className="modal-box justify-center">
+                                            <img src="{cookie}" alt="cookie" className=' mb-6' style={{ display: "block", margin: "0 auto", width: "70px" }} />
+                                            <h3 className="font-bold text-lg text-center">Please, log in to save your design</h3>
+                                            <div className="modal-action">
+                                                <Link to="/login"><button type="button" className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-DarkBlue disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                                                    Log In
+                                                </button></Link>
+                                                <Link to="/signup"><button type="button" className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-SuperPink disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                                                    Sign Up
+                                                </button></Link>
+                                                <form method="dialog">
+                                                    <button className="btn">Close</button>
+                                                </form>
+                                            </div>
                                         </div>
-                                    </div>
-                                </dialog >
-                            </>
-                        )}
-                    </div>
-                </>
-            )}
-        </AnimatePresence>
+                                    </dialog >
+                                </>
+                            )}
+                        </div>
+                    </>
+                )}
+            </AnimatePresence>
+        </>
     )
 }
 

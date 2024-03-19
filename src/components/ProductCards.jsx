@@ -53,7 +53,6 @@ export const ProductCards = () => {
                     </div>
                 </div>
             </div>
-            <div><h1 className='text-4xl font-bold text-center'>And much more...</h1></div>
         </section>
     )
 }

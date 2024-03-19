@@ -84,14 +84,14 @@ export const SignUp = () => {
                 </div>
             </div> */}
 
-            <div className="container mx-auto text-center">
+            <div className="container sm:w-1/2 mx-auto  justify-center">
                 <div className="lg:offset-3 lg:col-6">
                     <form className="container">
-                        <div className="bg-white rounded-lg shadow-lg">
-                            <div className="bg-gray-800 text-white py-4 px-6">
-                                <h1 className="text-2xl font-bold">User Registration</h1>
+                        <div className="bg-white rounded-lg shadow-lg p-8">
+                            <div className="text-gray-800 py-4 px-6">
+                                <h2 className="text-3xl font-bold  text-center">Create new account</h2>
                             </div>
-                            <div className="px-6 py-4 sm:w-1/2 mx-auto">
+                            <div className="sm:w-1/2 mx-auto justify-center mt-4 mb-4">
                                 {showAlert && (
                                     <div className={`alert ${alertType}`} role="alert">
                                         {alertMessage}
@@ -101,35 +101,43 @@ export const SignUp = () => {
                                     <>
                                         <div className="lg:col-12">
                                             <div className="mb-4">
-                                                <label><span className="errmsg"></span></label>
-                                                <input type="text" placeholder="Name" className="bg-gray-200 px-4 py-2 rounded-md w-full" autoComplete="name" required value={name} onChange={(e) => { setName(e.target.value) }} />
+                                                <p className="text-gray-700 text-start mb-2">Your name</p>
+                                                <input type="text" placeholder="name" className="bg-gray-200 px-4 py-2 rounded-md w-full" autoComplete="name" required value={name} onChange={(e) => { setName(e.target.value) }} />
                                             </div>
                                         </div>
                                         <div className="lg:col-12">
                                             <div className="mb-4">
-                                                <label><span className="errmsg"></span></label>
-                                                <input type="email" placeholder="Email" className="bg-gray-200 px-4 py-2 rounded-md w-full" autoComplete="email" required value={email} onChange={(e) => { setEmail(e.target.value) }} />
+                                                <p className="text-gray-700 text-start mb-2">Your email</p>
+                                                <input type="email" placeholder="your@mail.com" className="bg-gray-200 px-4 py-2 rounded-md w-full" autoComplete="email" required value={email} onChange={(e) => { setEmail(e.target.value) }} />
                                             </div>
                                         </div>
                                         <div className="lg:col-12">
                                             <div className="mb-4">
-                                                <label><span className="errmsg"></span></label>
-                                                <input disabled={isRegistering} type="password" placeholder="Password" className="bg-gray-200 px-4 py-2 rounded-md w-full" autoComplete="new-password" required value={password} onChange={(e) => { setPassword(e.target.value) }} />
+                                                <p className="text-gray-700 text-start mb-2">Password</p>
+                                                <input disabled={isRegistering} type="password" name="password" id="password" placeholder="••••••" className="bg-gray-200 px-4 py-2 rounded-md w-full" autoComplete="new-password" required value={password} onChange={(e) => { setPassword(e.target.value) }} />
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <div class="flex items-center h-5">
+                                                <input id="terms" aria-describedby="terms" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="" />
+                                            </div>
+                                            <div class="ml-3 text-sm mb-4">
+                                                <label for="terms" class="font-light text-primary-600 dark:text-gray-300">I accept the <a class="font-medium text-bold text-DarkBlue hover:underline dark:text-primary-500" href="#">Terms and Conditions</a></label>
                                             </div>
                                         </div>
                                     </>
                                 )}
-                                <div className="mb-2">
-                                    <button onClick={onSubmit} type="submit" disabled={isRegistering} className="bg-gray-800 text-white px-4 py-2 rounded-md mr-1">Sign Up</button>
-                                    <span className="text-gray-600">or</span>
-                                    <Link to={'/login'} className="bg-yellow-500 text-white px-4 py-2 rounded-md ml-2">Log In</Link>
-                                </div>
+
+                                <button onClick={onSubmit} type="submit" disabled={isRegistering} className="bg-SuperPink text-white px-4 py-2 rounded-md  w-full">Create an account</button>
+                                <p class="text-sm text-start mt-3 font-light text-gray-500 dark:text-gray-400">
+                                    Already have an account? <Link to={'/login'} className="font-medium text-DarkBlue hover:underline dark:text-primary-500 mb-3">Login here</Link>
+                                </p>
+
+
+
+
                             </div>
-                            <div className="text-start text-gray-600 px-6 py-4">
-                                <p className="text-sm"><strong>Star Wars is part of The Walt Disney Family of Companies.</strong></p>
-                                <p className="text-sm">This email and password lets you seamlessly log into services and experiences across The Walt Disney Family of Companies, such as ESPN, Walt Disney World, Marvel, and more.</p>
-                                <p className="text-sm">If you've used your email with one of our services, please use it here too.</p>
-                            </div>
+
                         </div>
                     </form>
                 </div>

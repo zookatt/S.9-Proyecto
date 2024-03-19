@@ -2,7 +2,7 @@ import React from 'react';
 import { GalleryImages } from '../config/constants';
 import { CustomButton } from './CustomButton';
 
-export const GaleryPicker = ({ onSelectImage, selectedImage, readFile }) => {
+export const GaleryPicker = ({ handleSubmit, selectedImage, readFile, onSelectImage }) => {
 
 
     return (
@@ -12,31 +12,31 @@ export const GaleryPicker = ({ onSelectImage, selectedImage, readFile }) => {
                 < div className="grid grid-cols-3 gap-4">
                     {/* Renderizar cada imagen disponible */}
                     {GalleryImages.map((image) => (
-                        <img
+                        <button onChange={(e) => onSelectImage(image)}> <img
                             key={image.id}
                             src={image.src}
                             title={image.title}
                             className={`gallery-image ${selectedImage === image ? 'selected' : ''}`}
-                            onClick={() => onSelectImage(image)}//esto funciona bien
-                        />
+
+                        /></button>
 
                     ))}
                 </div>
                 <p className='mt-2 text-gray-500 text-xs truncate'>
-                    {selectedImage ? selectedImage.alt : "No image selected"}
+                    {selectedImage ? selectedImage.title : "No image selected"}
                 </p>
 
                 <div className='mt-4 flex flex-wrap gap-3'>
                     <CustomButton
                         type="outline"
                         title="Logo"
-                        handleClick={() => readFile('logo')}
+                        handleClick={() => handleSubmit('logo')}
                         customStyles="text-xs"
                     />
                     <CustomButton
                         type="filled"
                         title="Full"
-                        handleClick={() => readFile('full')}
+                        handleClick={() => handleSubmit('full')}
                         customStyles="text-xs"
                     />
                 </div>

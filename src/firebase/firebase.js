@@ -1,6 +1,9 @@
 import { initializeApp } from "firebase/app";
 import {getAuth} from "firebase/auth";
 
+import { getFirestore } from "firebase/firestore";//es de formulario contacto
+import { getStorage } from "firebase/storage";
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyANb1J8ydfP5ui_Ya0aGuvks5_GbAng4qs",
@@ -15,4 +18,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-export {app, auth};
+//const db = getFirestore(app);//es de formulario contacto
+const db = getFirestore(app)
+const storage = getStorage(app)
+
+export {app, auth, db, storage};

@@ -1,9 +1,82 @@
 import canvas_capy from '../assets/canvas_capy.png'
+import peace from '../assets/peace.png'
+
+import ropa from '../assets/images/ropa.jpg'
+import tote from '../assets/images/tote.jpg'
+import mug from '../assets/images/mug.jpg'
+import phone from '../assets/images/phone.jpg'
+import acrylic from '../assets/images/acryl.jpg'
+
 export const Products = () => {
     return (
         <div>
             <div className="text-center p-10">
                 <h1 className="font-bold text-4xl mb-4">Featured Products</h1>
+            </div>
+
+            <div className="carousel carousel-center rounded-box">
+                <div className="carousel-item">
+                    <img src={ropa} alt="Pizza" style={{ width: "300px", height: "300px" }} />
+                </div>
+                <div className="carousel-item">
+                    <img src={tote} alt="Pizza" style={{ width: "300px", height: "300px" }} />
+                </div>
+                <div className="carousel-item">
+                    <img src={mug} alt="Pizza" style={{ width: "300px", height: "300px" }} />
+                </div>
+                <div className="carousel-item">
+                    <img src={phone} alt="Pizza" style={{ width: "300px", height: "300px" }} />
+                </div>
+                <div className="carousel-item">
+                    <img src={acrylic} alt="Pizza" style={{ width: "300px", height: "300px" }} />
+                </div>
+            </div>
+
+
+            <div className="text-center ">
+                <h1 className="font-bold text-4xl mb-4">Our Design</h1>
+            </div>
+            <div className="carousel carousel-center rounded-box">
+                <div className="carousel-item">
+                    <img src={ropa} alt="Pizza" style={{ width: "300px", height: "300px" }} />
+                </div>
+                <div className="carousel-item">
+                    <img src={tote} alt="Pizza" style={{ width: "300px", height: "300px" }} />
+                </div>
+                <div className="carousel-item">
+                    <img src={mug} alt="Pizza" style={{ width: "300px", height: "300px" }} />
+                </div>
+                <div className="carousel-item">
+                    <img src={phone} alt="Pizza" style={{ width: "300px", height: "300px" }} />
+                </div>
+                <div className="carousel-item">
+                    <img src={acrylic} alt="Pizza" style={{ width: "300px", height: "300px" }} />
+                </div>
+            </div>
+
+            <div className="text-center ">
+                <h1 className="font-bold text-4xl mb-4">Custom Design</h1>
+            </div>
+            <div className="carousel carousel-center rounded-box">
+                <div className="carousel-item">
+                    <img src={ropa} alt="Pizza" style={{ width: "300px", height: "300px" }} />
+                </div>
+                <div className="carousel-item">
+                    <img src={tote} alt="Pizza" style={{ width: "300px", height: "300px" }} />
+                </div>
+                <div className="carousel-item">
+                    <img src={mug} alt="Pizza" style={{ width: "300px", height: "300px" }} />
+                </div>
+                <div className="carousel-item">
+                    <img src={phone} alt="Pizza" style={{ width: "300px", height: "300px" }} />
+                </div>
+                <div className="carousel-item">
+                    <img src={acrylic} alt="Pizza" style={{ width: "300px", height: "300px" }} />
+                </div>
+            </div>
+
+            <div className="text-center ">
+                <h1 className="font-bold text-4xl mb-4">Prices</h1>
             </div>
 
             {/* <!-- ✅ Grid Section - Starts Here 👇 --> */}
@@ -19,16 +92,9 @@ export const Products = () => {
                             <span className="text-gray-400 mr-3 uppercase text-xs">T-Shirt</span>
                             <p className="text-lg font-bold text-black truncate block capitalize">Don't Worry Be Capy</p>
                             <div className="flex items-center">
-                                <p className="text-lg font-semibold text-black cursor-auto my-3">Starting from 16.99€</p>
+                                <p className="text-md  text-black  text-black cursor-auto my-3">Starting from 16.99€</p>
                             </div>
-                            <p className="text-sm font-semibold text-black cursor-auto my-3">Vote for this design</p>
-                            <div className="rating gap-1">
-                                <input type="radio" name="rating-3" className="mask mask-heart bg-red-400" />
-                                <input type="radio" name="rating-3" className="mask mask-heart bg-orange-400" />
-                                <input type="radio" name="rating-3" className="mask mask-heart bg-yellow-400" />
-                                <input type="radio" name="rating-3" className="mask mask-heart bg-lime-400" />
-                                <input type="radio" name="rating-3" className="mask mask-heart bg-green-400" />
-                            </div>
+
                         </div>
                     </a>
                 </div>
@@ -37,16 +103,14 @@ export const Products = () => {
                 <!--   ✅ Product card 2 - Starts Here 👇 --> */}
                 <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
                     <a href="#">
-                        <img src="https://images.unsplash.com/photo-1651950519238-15835722f8bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mjh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                        <img src={peace}
                             alt="Product" className="h-80 w-72 object-cover rounded-t-xl" />
                         <div className="px-4 py-3 w-72">
-                            <span class="text-gray-400 mr-3 uppercase text-xs">Brand</span>
-                            <p className="text-lg font-bold text-black truncate block capitalize">Product Name</p>
+                            <span class="text-gray-400 mr-3 uppercase text-xs">T-SHIRT</span>
+                            <p className="text-lg font-bold text-black truncate block capitalize">Peace Was Never An Option</p>
                             <div className="flex items-center">
-                                <p className="text-lg font-semibold text-black cursor-auto my-3">$149</p>
-                                <del>
-                                    <p className="text-sm text-gray-600 cursor-auto ml-2">$199</p>
-                                </del>
+                                <p className="text-md  text-black cursor-auto my-3">Starting from 16.99€</p>
+
                                 <div className="ml-auto"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                     fill="currentColor" className="bi bi-bag-plus" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"

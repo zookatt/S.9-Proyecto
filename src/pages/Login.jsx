@@ -86,11 +86,10 @@ export const Login = () => {
                     </form>
                 </div>
             </div> */}
-            <form className="container mx-auto justify-center">
+            <form className="container sm:w-1/2 mx-auto justify-center">
                 <div className="bg-white rounded-lg shadow-lg p-8">
                     <div className="text-center">
-                        <h2 className="text-2xl font-bold mb-4">Enter your email</h2>
-                        <p className="text-gray-700">Log into your Torino print account. If you don't have one, you will be prompted to create one.</p>
+                        <h2 className="text-3xl font-bold mb-4 text-center">Log in to your account</h2>
                     </div>
                     <div className="sm:w-1/2 mx-auto justify-center mt-4 mb-4">
                         {showAlert && (
@@ -101,24 +100,36 @@ export const Login = () => {
                         {!showAlert && (
                             <>
                                 <div className="mb-4">
-                                    <input type="email" placeholder="Email" className="bg-gray-200 px-4 py-2 rounded-md w-full" autoComplete="email" required value={email} onChange={(e) => { setEmail(e.target.value) }} />
+                                    <p className="text-gray-700 text-start mb-2">Your email</p>
+
+                                    <input type="email" placeholder="your@mail.com" className="bg-gray-200 px-4 py-2 rounded-md w-full" autoComplete="email" required value={email} onChange={(e) => { setEmail(e.target.value) }} />
                                 </div>
                                 <div className="mb-4">
-                                    <input type="password" placeholder="Password" className="bg-gray-200 px-4 py-2 rounded-md w-full" autoComplete="current-password" required value={password} onChange={(e) => { setPassword(e.target.value) }} />
+                                    <p className="text-gray-700 text-start mb-2">Password</p>
+                                    <input type="password" name="password" id="password" placeholder="••••••" className="bg-gray-200 px-4 py-2 rounded-md w-full" autoComplete="current-password" required value={password} onChange={(e) => { setPassword(e.target.value) }} />
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-start">
+                                        <div class="flex items-center h-5">
+                                            <input id="remember" aria-describedby="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="" />
+                                        </div>
+                                        <div class="ml-3 text-sm">
+                                            <label for="remember" class="text-gray-500 dark:text-gray-300">Remember me</label>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</a>
                                 </div>
                             </>
                         )}
-                        <div className=" mx-auto justify-center">
-                            <button type="submit" onClick={(e) => { onSubmit(e) }} className="bg-gray-800 text-white px-4 py-2 rounded-md mr-2">Login</button>
-                            <span className="text-gray-600">or</span>
-                            <Link to={'/signup'} className="bg-yellow-500 text-white px-4 py-2 rounded-md ml-2">Sign Up</Link>
+                        <div className=" mx-auto text-center mt-3">
+                            <button type="submit" onClick={(e) => { onSubmit(e) }} className="bg-DarkBlue text-white px-4 py-2 rounded-md w-full mb-3">Login</button>
+
+                            <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                                Don’t have an account yet? <Link to={'/signup'} className="font-medium text-SuperPink text-bold  hover:underline dark:text-primary-500">Sign up</Link>
+                            </p>
                         </div>
                     </div>
-                    <div className="text-center text-gray-600 mt-4">
-                        <p className="text-sm"><strong>Torino print lorem ipsum lorem lorem.</strong></p>
-                        <p className="text-sm">This email and password lets you seamlessly log into services and experiences across The Walt Disney Family of Companies, such as ESPN, Walt Disney World, Marvel, and more.</p>
-                        <p className="text-sm">If you've used your email with one of our services, please use it here too.</p>
-                    </div>
+
                 </div>
             </form>
 
