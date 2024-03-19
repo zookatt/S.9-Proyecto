@@ -62,30 +62,7 @@ export const Login = () => {
 
     return (
         <div>
-            {/* <div className="relative flex flex-col justify-center h-screen overflow-hidden">
-                <div className="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-lg">
-                    <h1 className="text-3xl font-semibold text-center text-SuperPink mb-3">Please, log in to continue</h1>
-                    <form className="space-y-4">
-                        <div>
-                            <label className="label">
-                                <span className="text-base label-text">Email</span>
-                            </label>
-                            <input type="text" placeholder="Email Address" class="w-full input input-bordered  border-SuperPink" />
-                        </div>
-                        <div>
-                            <label className="label">
-                                <span className="text-base label-text ">Password</span>
-                            </label>
-                            <input type="password" placeholder="Enter Password"
-                                className="w-full input input-bordered border-SuperPink" />
-                        </div>
-                        <a href="#" className="text-xs text-gray-600 hover:underline hover:text-blue-600">Forget Password?</a>
-                        <div>
-                            <button className="btn  w-full bg-SuperPink justify-center text-white">Login</button>
-                        </div>
-                    </form>
-                </div>
-            </div> */}
+
             <form className="container sm:w-1/2 mx-auto justify-center">
                 <div className="bg-white rounded-lg shadow-lg p-8">
                     <div className="text-center">
@@ -138,60 +115,3 @@ export const Login = () => {
 }
 
 
-{/* <div className="container text-center">
-                <div className="row">
-                    <div className="offset-lg-3 col-lg-6" style={{ marginTop: '100px' }}>
-                        <form className="container">
-                            <div className="card " style={{ borderRadius: "16px" }}>
-                                <div className="card-header text-start">
-                                    <h2><strong>Enter your email</strong></h2>
-                                    <p>Log into your Star Wars account. If you don't have one, you will be prompted to create one.</p>
-                                </div>
-                                <div className="card-body">
-                                    {showAlert && (
-                                        <div className={`alert ${alertType}`} role="alert">
-                                            {alertMessage}
-                                        </div>
-                                    )}
-                                    {!showAlert && (
-                                        <>
-                                            <div className="form-group">
-                                                <input type="email" placeholder="Email" style={{ backgroundColor: "#e9ebf0" }}
-                                                    autoComplete='email'
-                                                    required
-                                                    value={email} onChange={(e) => { setEmail(e.target.value) }} className="form-control required"></input>
-                                            </div>
-                                            <div className="form-group">
-                                                <label><span className="errmsg"></span></label>
-                                                <input type="password" placeholder="Password" style={{ backgroundColor: "#e9ebf0" }}
-                                                    autoComplete='current-password'
-                                                    required
-                                                    value={password} onChange={(e) => { setPassword(e.target.value) }} className="form-control"></input>
-                                                <label><span className="errmsg"></span></label>
-                                            </div>
-
-                                        </>
-                                    )}
-                                    <div>
-                                        <button type="submit"
-                                            onClick={(e) => { onSubmit(e) }}
-                                            className="btn btn-dark me-2">Login</button>
-                                        or
-                                        <Link to={'/signup'} className="btn btn-warning ms-2" >Sign Up</Link>
-                                    </div>
-
-                                </div>
-                                <div className="card-footer text-start text-muted mb-2">
-                                    <p className="text-sm" style={{ color: "#5f6166" }}><strong>Star Wars is part of The Walt Disney Family of Companies.</strong></p>
-                                    <p className="text-sm" style={{ color: "#5f6166" }}>This email and password lets you seamlessly log into services and experiences across The Walt Disney Family of Companies, such as ESPN, Walt Disney World, Marvel, and more.</p>
-                                    <p className="text-sm" style={{ color: "#5f6166" }}>If you've used your email with one of our services, please use it here too.</p>
-                                    <span></span>
-                                    <div className="text-center">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div> */}

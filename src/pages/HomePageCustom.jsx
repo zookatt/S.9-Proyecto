@@ -32,7 +32,7 @@ export const HomePageCustom = () => {
                             </h1>
                         </motion.div>
                         <motion.div {...headContentAnimation} className='flex flex-col gap-5 w-2/3 sm:w-1/3'>
-                            <p className='font-normal'>Create a unique and exclusive T-shirt with our brand-new 3D customization tool. <strong > You choose the design, we print it for you. </strong>{" "}</p>
+                            <p className='font-normal align-self-end'>Create a unique and exclusive T-shirt with our brand-new 3D customization tool. <strong > You choose the design, we print it for you. </strong>{" "}</p>
                             <CustomButton type="filled" title="Try It Out" handleClick={() => state.intro = false} customStyles="w-fit px-4 py-2.5 font-bold text-sm" />
                         </motion.div>
                     </motion.div>

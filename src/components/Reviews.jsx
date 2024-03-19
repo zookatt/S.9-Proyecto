@@ -18,14 +18,14 @@ export const Reviews = () => {
                 {customers.map((customer, index) => (
                     <div key={index} className="carousel-item h-full py-4 justify-center" >
                         <div className="justify-center">
-                            <div className="flex justify-center mt-8 mb-3 ">
+                            <div className="flex justify-center mt-8 mb-1 ">
                                 <img src={customer.img} />
                             </div>
                             <div className="justify-center text-center font-semibold mb-1 sm:text-[18px] text-[14px]">{customer.customer}</div>
-                            <div className="sm:w-2/3 mx-auto flex jusify-center  mb-5 text-black text-center sm:text-[20px] text-[16px] py-5 px-5">
+                            <div className="sm:w-2/3 mx-auto flex jusify-center  mb-1 text-black text-center sm:text-[20px] text-[16px] py-5 px-5">
                                 {`"${customer.review}"`}
                             </div>
-                            <div className="rating mb-3">
+                            <div className="rating mb-1">
                                 <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" disabled />
                                 <input type="radio " name="rating-2" className="mask mask-star-2 bg-orange-400" disabled />
                                 <input type="radio " name="rating-2" className="mask mask-star-2 bg-orange-400" disabled />
