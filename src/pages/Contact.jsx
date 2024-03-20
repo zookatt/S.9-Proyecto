@@ -4,11 +4,13 @@ import { useState } from "react"
 import { addDoc, collection } from "firebase/firestore"
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 import { db, storage } from "../firebase/firebase"
-
+import send from "../assets/images/send.gif"
 export const Contact = () => {
 
     const [imageUrl, setImageUrl] = useState("");
-
+    const openModal = () => {
+        document.getElementById('my_modal_3').showModal();
+    };
     const saveInfo = async (e) => {
         e.preventDefault();
         const name = e.target.name.value;
@@ -34,6 +36,7 @@ export const Contact = () => {
         }
 
         e.target.reset();
+        openModal();
     };
 
     const fileHandler = async (e) => {
@@ -45,6 +48,8 @@ export const Contact = () => {
         // Update the imageUrl state with the URL of the uploaded image
         setImageUrl(url);
     };
+
+
 
     return (
         <div>
@@ -154,6 +159,24 @@ export const Contact = () => {
                     </form>
                 </div>
             </div>
+            {/* Modal de éxito */}
+            {saveInfo && (
+                <>
+                    <button className="btn hidden" onClick={openModal}>open modal</button>
+                    <dialog id="my_modal_3" className="modal">
+
+                        <div className="modal-box justify-center">
+
+                            <img src={send} alt="robot" className=' mb-6' style={{ display: "block", margin: "0 auto", width: "200px" }} />
+                            <h2 className="text-2xl font-bold mb-4">Your email has been sent!</h2>
+                            <p className="text-gray-700 mb-2">Thank you for youe message. We'll be back with you soon.</p>
+                            <form method="dialog" class="flex justify-end">
+                                <button className="btn">Close</button>
+                            </form>
+                        </div>
+                    </dialog >
+                </>
+            )}
         </div>
     )
 }

@@ -34,7 +34,7 @@ export const Reviews = () => {
 
                             </div>
                             <div className="flex justify-center">
-                                <img src={google} alt="" draggable="false" className='w-[150px]' />
+                                <a href='https://shorturl.at/bdzO0'><img src={google} alt="" draggable="false" className='w-[150px]' /></a>
                             </div>
                         </div>
                     </div>

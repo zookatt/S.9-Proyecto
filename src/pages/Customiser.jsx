@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import robot from "../assets/images/robot.gif"
 import { useSnapshot } from 'valtio';
 
 import { GalleryImages } from '../config/constants';
@@ -239,20 +240,24 @@ export const Customiser = () => {
                                 <>
                                     <button className="btn hidden" onClick={() => openModal}>open modal</button>
                                     <dialog id="my_modal_2" className="modal">
+
                                         <div className="modal-box justify-center">
-                                            <img src="{cookie}" alt="cookie" className=' mb-6' style={{ display: "block", margin: "0 auto", width: "70px" }} />
+                                            <form method="dialog" class="flex justify-end">
+                                                <button className="btn">Close</button>
+                                            </form>
+                                            <img src={robot} alt="robot" className=' mb-6' style={{ display: "block", margin: "0 auto", width: "200px" }} />
                                             <h3 className="font-bold text-lg text-center">Please, log in to save your design</h3>
-                                            <div className="modal-action">
-                                                <Link to="/login"><button type="button" className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-DarkBlue disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+
+                                            <div className="modal-action flex justify-center">
+                                                <Link to="/login"><button type="button" className="btn btn-md  px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-DarkBlue hover:text-white disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                                                     Log In
                                                 </button></Link>
-                                                <Link to="/signup"><button type="button" className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-SuperPink disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                                                <Link to="/signup"><button type="button" className="btn btn-md  px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-SuperPink  hover:text-white disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                                                     Sign Up
                                                 </button></Link>
-                                                <form method="dialog">
-                                                    <button className="btn">Close</button>
-                                                </form>
+
                                             </div>
+
                                         </div>
                                     </dialog >
                                 </>

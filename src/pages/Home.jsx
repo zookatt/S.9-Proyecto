@@ -23,9 +23,12 @@ export const Home = () => {
                     <img src={cookie} alt="cookie" className=' mb-6' style={{ display: "block", margin: "0 auto", width: "70px" }} />
                     <h3 className="font-bold text-lg text-center">We use cookies</h3>
                     <p className="py-4">Cookies help us deliver the best experience on our website. By using our website, you agree to the use of cookies. {" "}Please, accept these sweeties to continue enjoying our site!</p>
-                    <div className="modal-action">
+                    <div className="modal-action flex">
+                        <form method="dialog ">
+                            <button className="btn me-2">Accept</button>
+                        </form>
                         <form method="dialog">
-                            <button className="btn">Accept</button>
+                            <button className="btn">No, I'm on a diet</button>
                         </form>
                     </div>
                 </div>
