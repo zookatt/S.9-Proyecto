@@ -71,7 +71,7 @@ export const Contact = () => {
                                 id="name"
                                 placeholder="Full Name"
                                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-
+                                required
                             />
                         </div>
                         <div className="mb-5">
@@ -87,7 +87,7 @@ export const Contact = () => {
                                 id="email"
                                 placeholder="your@mail.com"
                                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-
+                                required
                             />
                         </div>
                         <div className="mb-5">
@@ -103,7 +103,7 @@ export const Contact = () => {
                                 id="subject"
                                 placeholder="Enter your subject"
                                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-
+                                required
                             />
                         </div>
                         <div className="mb-5">
@@ -119,7 +119,7 @@ export const Contact = () => {
                                 id="message"
                                 placeholder="Type your message"
                                 className="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-
+                                required
                             ></textarea>
                         </div>
                         <div
@@ -140,7 +140,7 @@ export const Contact = () => {
                                 <input type="file"
                                     id='uploadFile1'
                                     className="hidden"
-                                    onChange={fileHandler}
+                                    onChange={fileHandler} required
                                 />
                                 <label for="uploadFile1"
                                     className="block px-6 py-2.5 rounded text-gray-600 text-sm tracking-wider font-semibold border-none outline-none bg-gray-200 hover:bg-gray-100">Browse Files</label>

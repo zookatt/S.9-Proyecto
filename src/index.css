@@ -90,3 +90,36 @@ input[type="file"] {
 .sketch-picker>div:nth-child(3) {
     display: none !important;
 }
+
+
+.desktop-visible {
+    display: block;
+    /* Visible on desktop and tablets */
+}
+
+.mobile-visible {
+    display: none;
+    /* Invisible on desktop and tablets */
+}
+
+/* Media query for tablets and desktops */
+@media (min-width: 768px) {
+    .desktop-visible {
+        display: block;
+    }
+
+    .mobile-visible {
+        display: none;
+    }
+}
+
+/* Media query for mobile */
+@media (max-width: 767px) {
+    .desktop-visible {
+        display: none;
+    }
+
+    .mobile-visible {
+        display: block;
+    }
+}

@@ -36,7 +36,7 @@ export const Login = () => {
                 setAlertMessage(`Welcome back to Torino Print, ${email}!`);
                 setAlertType('alert-success');
                 setShowAlert(true);
-                navigate('/user');
+                navigate('/design');
             } catch (error) {
                 setAlertMessage('User with this email o password does not exist. Please, sign up.');
                 setAlertType('alert-danger');

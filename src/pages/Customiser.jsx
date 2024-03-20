@@ -243,7 +243,7 @@ export const Customiser = () => {
 
                                         <div className="modal-box justify-center">
                                             <form method="dialog" class="flex justify-end">
-                                                <button className="btn">Close</button>
+                                                <button className="btn mb-5">Close</button>
                                             </form>
                                             <img src={robot} alt="robot" className=' mb-6' style={{ display: "block", margin: "0 auto", width: "200px" }} />
                                             <h3 className="font-bold text-lg text-center">Please, log in to save your design</h3>
