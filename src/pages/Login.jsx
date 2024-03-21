@@ -34,12 +34,12 @@ export const Login = () => {
                 await doSignInWithEmailAndPassword(email, password);
                 updateUserLoggedIn({ name: email });
                 setAlertMessage(`Welcome back to Torino Print, ${email}!`);
-                setAlertType('alert-success');
+                setAlertType('bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md');
                 setShowAlert(true);
                 navigate('/design');
             } catch (error) {
                 setAlertMessage('User with this email o password does not exist. Please, sign up.');
-                setAlertType('alert-danger');
+                setAlertType('border border-t-4 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700');
                 setShowAlert(true);
 
             } finally {
@@ -99,7 +99,7 @@ export const Login = () => {
                             </>
                         )}
                         <div className=" mx-auto text-center mt-3">
-                            <button type="submit" onClick={(e) => { onSubmit(e) }} className="bg-DarkBlue text-white px-4 py-2 rounded-md w-full mb-3">Login</button>
+                            <button type="submit" onClick={(e) => { onSubmit(e) }} className="bg-DarkBlue text-white px-4 py-2 rounded-md w-full mt-3 mb-3">Login</button>
 
                             <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                                 Don’t have an account yet? <Link to={'/signup'} className="font-medium text-SuperPink text-bold  hover:underline dark:text-primary-500">Sign up</Link>

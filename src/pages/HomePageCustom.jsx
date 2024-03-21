@@ -30,7 +30,7 @@ export const HomePageCustom = () => {
                                     PRINT <br className='xl:hidden' /> YOUR <br className='xl:hidden' /> DREAM
                                 </span>
                             </h1>
-                            <h1 className='text-8xl font-bold mobile-visible'>
+                            <h1 className='text-7xl font-bold mobile-visible'>
                                 <span className="block" style={{
                                     background: 'linear-gradient(to right, #0B4E9C 10%, #E8D20E 50%, #D71987 60%)',
                                     WebkitBackgroundClip: 'text',

@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 export const SignUp = () => {
     const { updateUserLoggedIn } = useContext(authContext);
-    const navigate = useNavigate();
+    //const navigate = useNavigate();
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -21,7 +21,7 @@ export const SignUp = () => {
 
         if (!validateEmail(email)) {
             setAlertMessage('Invalid email address');
-            setAlertType('alert-danger');
+            setAlertType('border border-t-4 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700');
             setShowAlert(true);
             return;
         }
@@ -31,13 +31,14 @@ export const SignUp = () => {
             try {
                 await doCreateUserWithEmailAndPassword(email, password);
                 updateUserLoggedIn({ name: email });
-                setAlertMessage('Welcome to Torino Print!');
-                setAlertType('alert-success');
+                setAlertMessage(`'A verification link has been sent to ${email}. Please, check your mailbox and follow the instructions to complete registration.`);
+                setAlertType('bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md');
                 setShowAlert(true);
-                navigate('/user');
+
+                //navigate('/user');
             } catch (error) {
                 setAlertMessage('User with this email has already exists. Please, try again.');
-                setAlertType('alert-warning');
+                setAlertType('bg-orange-100 border-t-4 border-orange-500 text-orange-700 p-4');
                 setShowAlert(true);
 
             } finally {
@@ -100,7 +101,7 @@ export const SignUp = () => {
                                     </>
                                 )}
 
-                                <button onClick={onSubmit} type="submit" disabled={isRegistering} className="bg-SuperPink text-white px-4 py-2 rounded-md  w-full">Create an account</button>
+                                <button onClick={onSubmit} type="submit" disabled={isRegistering} className="bg-SuperPink text-white px-4 py-2 rounded-md mt-3  w-full">Create an account</button>
                                 <p class="text-sm text-start mt-3 font-light text-gray-500 dark:text-gray-400">
                                     Already have an account? <Link to={'/login'} className="font-medium text-DarkBlue hover:underline dark:text-primary-500 mb-3">Login here</Link>
                                 </p>
