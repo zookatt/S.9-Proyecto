@@ -3,9 +3,10 @@ import { useState, useContext } from "react";
 import { authContext } from "../context/authContext";
 import { Link, useNavigate } from "react-router-dom";
 
+
 export const SignUp = () => {
     const { updateUserLoggedIn } = useContext(authContext);
-    //const navigate = useNavigate();
+    //const navigateTo = useNavigate();
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -30,12 +31,13 @@ export const SignUp = () => {
             setIsRegistering(true);
             try {
                 await doCreateUserWithEmailAndPassword(email, password);
-                updateUserLoggedIn({ name: email });
+                updateUserLoggedIn({ name: name, email: email });
                 setAlertMessage(`'A verification link has been sent to ${email}. Please, check your mailbox and follow the instructions to complete registration.`);
                 setAlertType('bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md');
                 setShowAlert(true);
 
-                //navigate('/user');
+                //navigateTo('/user');
+
             } catch (error) {
                 setAlertMessage('User with this email has already exists. Please, try again.');
                 setAlertType('bg-orange-100 border-t-4 border-orange-500 text-orange-700 p-4');
@@ -96,6 +98,15 @@ export const SignUp = () => {
                                             </div>
                                             <div class="ml-3 text-sm mb-4">
                                                 <label for="terms" class="font-light text-primary-600 dark:text-gray-300">I accept the <a class="font-medium text-bold text-DarkBlue hover:underline dark:text-primary-500" href="#">Terms and Conditions</a></label>
+                                            </div>
+
+                                        </div>
+                                        <div class="flex items-start">
+                                            <div class="flex items-center h-5">
+                                                <input id="terms" aria-describedby="terms" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="" />
+                                            </div>
+                                            <div class="ml-3 text-sm mb-4">
+                                                <label for="terms" class="font-light text-primary-600 dark:text-gray-300">I agree to receive news, promotions and emails from Torino Print.</label>
                                             </div>
                                         </div>
                                     </>

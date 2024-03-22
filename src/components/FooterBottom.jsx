@@ -25,9 +25,9 @@ export const FooterBottom = () => {
             </div>
             <div className='pl-6 mb-4'>
                 <h2 className='font-bold  hover:text-SuperPink cursor-pointer text-2xl max-w-xs '>Follow us</h2>
-                <div className='flex mt-2'>
+                <div className='flex justify-evently mt-2'>
                     <div><a href="https://wa.me/653539287"><img src={whats} className="w-[35px]" alt="Whatsap" /></a></div>
-                    <div><a href="mailto:zotova.ea@gmail.com"><img src={email} className="w-[35px] mx-4" alt="Email" /></a></div>
+                    <div><a href="mailto:zotova.ea@gmail.com"><img src={email} className="w-[35px]" alt="Email" /></a></div>
                     <div><a href="https://www.instagram.com/torinoprint370/"><img src={instagram} className="w-[35px]" alt="Instagram" /></a></div>
                 </div>
             </div>

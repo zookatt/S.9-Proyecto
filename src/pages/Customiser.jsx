@@ -30,7 +30,7 @@ export const Customiser = () => {
     const [file, setFile] = useState('');
     const [image, setImage] = useState('Ring');
     const [generatingImg, setGeneratingImg] = useState(false);
-    const [design, setDesign] = useState(null);
+    const [design, setDesign] = useState(0);
 
     const [activeEditorTab, setActiveEditorTab] = useState("");
     const [activeFilterTab, setActiveFilterTab] = useState({
@@ -161,6 +161,10 @@ export const Customiser = () => {
 
             // Convertir el lienzo a una imagen PNG
             const imgData = canvas.toDataURL('image/png');
+
+            // Actualiza el estado design agregando la nueva imagen
+            // setDesign(prevDesign => [...prevDesign, imgData]);
+            // console.log(design);
 
             // Descargar la imagen
             downloadCanvasToImage(imgData, 'my_design.png');

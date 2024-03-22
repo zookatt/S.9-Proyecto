@@ -43,10 +43,10 @@ export const Contact = () => {
         const archiveI = e.target.files[0];
         const refArchive = ref(storage, `documents/${archiveI.name}`);
         await uploadBytes(refArchive, archiveI);
-        const url = await getDownloadURL(refArchive);
+        urlImg = await getDownloadURL(refArchive);
 
         // Update the imageUrl state with the URL of the uploaded image
-        setImageUrl(url);
+        setImageUrl(urlImg);
     };
 
 
