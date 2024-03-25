@@ -1,10 +1,13 @@
+//import { db, auth } from "../firebase/firebase"
 import { doCreateUserWithEmailAndPassword } from "../firebase/auth"
+//import { getFirestore, doc, setDoc } from "firebase/firestore";
 import { useState, useContext } from "react";
 import { authContext } from "../context/authContext";
 import { Link, useNavigate } from "react-router-dom";
 
 
 export const SignUp = () => {
+
     const { updateUserLoggedIn } = useContext(authContext);
     //const navigateTo = useNavigate();
 
@@ -20,6 +23,13 @@ export const SignUp = () => {
     const onSubmit = async (e) => {
         e.preventDefault();
 
+        if (!validateName(name)) {
+            setAlertMessage('Please enter your name');
+            setAlertType('border border-t-4 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700');
+            setShowAlert(true);
+            return;
+        }
+
         if (!validateEmail(email)) {
             setAlertMessage('Invalid email address');
             setAlertType('border border-t-4 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700');
@@ -31,7 +41,15 @@ export const SignUp = () => {
             setIsRegistering(true);
             try {
                 await doCreateUserWithEmailAndPassword(email, password);
-                updateUserLoggedIn({ name: name, email: email });
+                // const userCredential = await doCreateUserWithEmailAndPassword(email, password);
+                // const user = userCredential.user;
+
+                // // Store user's name in Firestore
+                // await setDoc(doc(db, "users", user.uid), {
+                //     name: name,
+                //     email: email,
+                // });
+                updateUserLoggedIn({ name: name, email: email, password: password });
                 setAlertMessage(`'A verification link has been sent to ${email}. Please, check your mailbox and follow the instructions to complete registration.`);
                 setAlertType('bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md');
                 setShowAlert(true);
@@ -47,13 +65,18 @@ export const SignUp = () => {
                 setIsRegistering(false);
             }
         }
+
+
     };
 
     function validateEmail(email) {
         const re = /\S+@\S+\.\S+/;
         return re.test(email);
     }
-
+    function validateName(name) {
+        const nameRegex = /^[a-zA-Z\s'-]+$/;
+        return nameRegex.test(name);
+    }
 
     return (
         <div>

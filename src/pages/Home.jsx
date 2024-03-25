@@ -12,6 +12,7 @@ export const Home = () => {
     }, []);
     return (
         <div>
+
             <MainArticle />
             <ProductCards />
             <Reviews />

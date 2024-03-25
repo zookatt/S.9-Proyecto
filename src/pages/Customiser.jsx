@@ -12,57 +12,35 @@ import { downloadCanvasToImage, reader } from '../config/helpers';
 import { EditorTabs, FilterTabs, DecalTypes } from '../config/constants';
 import { fadeAnimation, slideAnimation } from '../config/motion';
 import { CustomButton, GaleryPicker, ColorPicker, FilePicker, Tab } from '../components';
-import { Shirt } from '../canvasModel/Shirt';
-import { Mug } from '../canvasModel/Mug';
-//import { Mug } from '../canvasModel/Mug'
-//import { Shirt } from '../canvasModel/Shirt';
+import { storage } from '../firebase/firebase';
+
 
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from "react";
 import { authContext } from "../context/authContext";
 
+
+import { addDoc, collection } from "firebase/firestore"
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
+
 export const Customiser = () => {
 
     const navigate = useNavigate()
     const { userLoggedIn } = useContext(authContext);
-    const [prompt, setPrompt] = useState('');
     const snap = useSnapshot(state);
     const [file, setFile] = useState('');
-    const [image, setImage] = useState('Ring');
-    const [generatingImg, setGeneratingImg] = useState(false);
-    const [design, setDesign] = useState(0);
 
+    const [savedDesigns, setSavedDesigns] = useState([]);
     const [activeEditorTab, setActiveEditorTab] = useState("");
     const [activeFilterTab, setActiveFilterTab] = useState({
         logoShirt: true,
         stylishShirt: false,
     });
-
-    //switch between options
-    const [model, setModel] = useState('shirt');
+    const [canvaUrl, setCanvaUrl] = useState("");
 
     const openModal = () => {
         document.getElementById('my_modal_2').showModal();
     };
-
-    const [selectedImage, setSelectedImage] = useState(null);
-    // Manejador para seleccionar una imagen
-    const onSelectImage = (image) => {
-        setSelectedImage(image);
-        //readFile(type, image.src);
-        console.log('Imagen seleccionada:', image);
-    };
-    // const renderModel = () => {
-    //     switch (model) {
-    //         case 'shirt':
-    //             return <Shirt />
-    //         case 'mug':
-    //             return <Mug />
-    //         default:
-    //             return null;
-    //     }
-
-    // };
 
     // show tab content depending on the activeTab
     const generateTabContent = () => {
@@ -78,14 +56,14 @@ export const Customiser = () => {
             case "galerypicker":
                 return <GaleryPicker
 
-                    // file={file}
-                    // setFile={setFile}
-                    // readFile={readFile}
+                // file={file}
+                // setFile={setFile}
+                // readFile={readFile}
 
-                    prompt={prompt}
-                    setPrompt={setPrompt}
-                    generatingImg={generatingImg}
-                    handleSubmit={handleSubmit}
+                // prompt={prompt}
+                // setPrompt={setPrompt}
+                // generatingImg={generatingImg}
+                // handleSubmit={handleSubmit}
                 />
 
             default:
@@ -93,19 +71,7 @@ export const Customiser = () => {
         }
     }
 
-    const handleSubmit = async (type, selectedImage) => {
-        if (!selectedImage) return alert("Please select an image");
-        try {
-            onSelectImage(image);// call our backend to generate an ai image
-            // Assuming you want to send the selected image directly
-            handleDecals(type, selectedImage);
-        } catch (error) {
-            alert(error);
-        } finally {
 
-            setActiveEditorTab("");
-        }
-    };
 
     const handleDecals = (type, result) => {
         const decalType = DecalTypes[type];
@@ -147,37 +113,67 @@ export const Customiser = () => {
             })
 
     }
+    //================================================================
 
 
-    const saveDesignToFile = async () => {
+    const saveInfo = async (e) => {
+        e.preventDefault();
+
+        const newQuery = {
+
+            image: canvaUrl // Use imageUrl state here
+        };
+
+        // Function to save to Firestore
+        try {
+            await addDoc(collection(db, "savedCanvas"), {
+                ...newQuery
+            });
+        } catch (error) {
+            console.log(error);
+        }
+
+        e.target.reset();
+        openModal();
+    };
+
+    const fileHandler = async (e) => {
+        const archiveI = e.target.files[0];
+        const refArchive = ref(storage, `canvas/${archiveI.name}`);
+        await uploadBytes(refArchive, archiveI);
+        url = await getDownloadURL(refArchive);
+
+        // Update the imageUrl state with the URL of the uploaded image
+        setImageUrl(url);
+    };
+
+    const saveDesignToFile = async (designData) => {
         try {
             const canvas = document.createElement('canvas');
             // Ajusta el tamaño del lienzo según tus necesidades
             canvas.width = 1000;
             canvas.height = 800;
             const ctx = canvas.getContext('2d');
-
+            saveInfo();
+            fileHandler()
             // Dibuja tu diseño en el lienzo (aquí deberías tener lógica para dibujar tu diseño en el lienzo)
 
             // Convertir el lienzo a una imagen PNG
             const imgData = canvas.toDataURL('image/png');
-
-            // Actualiza el estado design agregando la nueva imagen
-            // setDesign(prevDesign => [...prevDesign, imgData]);
-            // console.log(design);
 
             // Descargar la imagen
             downloadCanvasToImage(imgData, 'my_design.png');
 
             // Mostrar un mensaje de éxito
             alert("Your design has been saved!");
+
         } catch (error) {
             // Manejar cualquier error que pueda ocurrir durante el proceso de guardado
             console.error('Error saving design:', error);
             alert("An error occurred while saving your design. Please try again later.");
         }
     }
-
+    //================================================================
     return (
         <>
 
@@ -185,21 +181,6 @@ export const Customiser = () => {
 
                 {!snap.intro && (
                     <>
-
-                        {/* <div className='mt-4 flex flex-col gap-3 mb-5'>
-                        <CustomButton
-                            type="filled"
-                            title="T-Shirt"
-                            handleClick={() => renderModel('shirt')}
-                            customStyles="w-fit px-4 py-2.5 font-bold text-sm"
-                        />
-                        <CustomButton
-                            type="filled"
-                            title="Mug"
-                            handleClick={() => renderModel('mug')}
-                            customStyles="w-fit px-4 py-2.5 font-bold text-sm"
-                        />
-                    </div> */}
 
 
                         <motion.div key="custom" className="absolute top-0 left z-10" {...slideAnimation('left')}>
@@ -225,7 +206,11 @@ export const Customiser = () => {
 
                         </motion.div>
 
-
+                        <h1 className="sm:text-4xl text-2xl font-bold leading-none text-center mb-5" style={{
+                            background: 'linear-gradient(to right, #0B4E9C 30%, #E8D20E 50%, #D71987 90%)',
+                            WebkitBackgroundClip: 'text',
+                            WebkitTextFillColor: 'transparent'
+                        }}>Upload your design and choose a color of your T-Shirt!</h1>
 
                         <div className='mt-4 flex flex-wrap gap-3 mb-5 md:w-1/2 mx-auto'>
                             <CustomButton type="filled"

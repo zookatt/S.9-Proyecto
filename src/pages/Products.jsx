@@ -6,77 +6,26 @@ import tote from '../assets/images/tote.jpg'
 import mug from '../assets/images/mug.jpg'
 import phone from '../assets/images/phone.jpg'
 import acrylic from '../assets/images/acryl.jpg'
+import { Link } from 'react-router-dom'
+
+import { Carousel } from '../components/Carousel'
 
 export const Products = () => {
+
     return (
         <div>
+
+
+            <div className="container mb-4">
+                <Carousel />
+            </div>
+
+
+
+
+
             <div className="text-center p-10">
                 <h1 className="font-bold text-4xl mb-4">Featured Products</h1>
-            </div>
-
-            <div className="carousel carousel-center rounded-box">
-                <div className="carousel-item">
-                    <img src={ropa} alt="Pizza" style={{ width: "300px", height: "300px" }} />
-                </div>
-                <div className="carousel-item">
-                    <img src={tote} alt="Pizza" style={{ width: "300px", height: "300px" }} />
-                </div>
-                <div className="carousel-item">
-                    <img src={mug} alt="Pizza" style={{ width: "300px", height: "300px" }} />
-                </div>
-                <div className="carousel-item">
-                    <img src={phone} alt="Pizza" style={{ width: "300px", height: "300px" }} />
-                </div>
-                <div className="carousel-item">
-                    <img src={acrylic} alt="Pizza" style={{ width: "300px", height: "300px" }} />
-                </div>
-            </div>
-
-
-            <div className="text-center ">
-                <h1 className="font-bold text-4xl mb-4">Our Design</h1>
-            </div>
-            <div className="carousel carousel-center rounded-box">
-                <div className="carousel-item">
-                    <img src={ropa} alt="Pizza" style={{ width: "300px", height: "300px" }} />
-                </div>
-                <div className="carousel-item">
-                    <img src={tote} alt="Pizza" style={{ width: "300px", height: "300px" }} />
-                </div>
-                <div className="carousel-item">
-                    <img src={mug} alt="Pizza" style={{ width: "300px", height: "300px" }} />
-                </div>
-                <div className="carousel-item">
-                    <img src={phone} alt="Pizza" style={{ width: "300px", height: "300px" }} />
-                </div>
-                <div className="carousel-item">
-                    <img src={acrylic} alt="Pizza" style={{ width: "300px", height: "300px" }} />
-                </div>
-            </div>
-
-            <div className="text-center ">
-                <h1 className="font-bold text-4xl mb-4">Custom Design</h1>
-            </div>
-            <div className="carousel carousel-center rounded-box">
-                <div className="carousel-item">
-                    <img src={ropa} alt="Pizza" style={{ width: "300px", height: "300px" }} />
-                </div>
-                <div className="carousel-item">
-                    <img src={tote} alt="Pizza" style={{ width: "300px", height: "300px" }} />
-                </div>
-                <div className="carousel-item">
-                    <img src={mug} alt="Pizza" style={{ width: "300px", height: "300px" }} />
-                </div>
-                <div className="carousel-item">
-                    <img src={phone} alt="Pizza" style={{ width: "300px", height: "300px" }} />
-                </div>
-                <div className="carousel-item">
-                    <img src={acrylic} alt="Pizza" style={{ width: "300px", height: "300px" }} />
-                </div>
-            </div>
-
-            <div className="text-center ">
-                <h1 className="font-bold text-4xl mb-4">Prices</h1>
             </div>
 
             {/* <!-- ✅ Grid Section - Starts Here 👇 --> */}
@@ -130,13 +79,10 @@ export const Products = () => {
                         <img src="https://images.unsplash.com/photo-1651950537598-373e4358d320?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MjV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
                             alt="Product" className="h-80 w-72 object-cover rounded-t-xl" />
                         <div className="px-4 py-3 w-72">
-                            <span className="text-gray-400 mr-3 uppercase text-xs">Brand</span>
-                            <p className="text-lg font-bold text-black truncate block capitalize">Product Name</p>
+                            <span className="text-gray-400 mr-3 uppercase text-xs">Tote Bag</span>
+                            <p className="text-lg font-bold text-black truncate block capitalize">Womens No Cry</p>
                             <div className="flex items-center">
-                                <p className="text-lg font-semibold text-black cursor-auto my-3">$149</p>
-                                <del>
-                                    <p className="text-sm text-gray-600 cursor-auto ml-2">$199</p>
-                                </del>
+                                <p className="text-lg font-semibold text-black cursor-auto my-3">Starting from 16.99€</p>
                                 <div className="ml-auto"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                     fill="currentColor" className="bi bi-bag-plus" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
@@ -156,13 +102,10 @@ export const Products = () => {
                         <img src="https://images.unsplash.com/photo-1651950540805-b7c71869e689?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mjl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
                             alt="Product" className="h-80 w-72 object-cover rounded-t-xl" />
                         <div className="px-4 py-3 w-72">
-                            <span className="text-gray-400 mr-3 uppercase text-xs">Brand</span>
-                            <p className="text-lg font-bold text-black truncate block capitalize">Product Name</p>
+                            <span className="text-gray-400 mr-3 uppercase text-xs">Mug</span>
+                            <p className="text-lg font-bold text-black truncate block capitalize">I'm Not Lazy</p>
                             <div className="flex items-center">
-                                <p className="text-lg font-semibold text-black cursor-auto my-3">$149</p>
-                                <del>
-                                    <p className="text-sm text-gray-600 cursor-auto ml-2">$199</p>
-                                </del>
+                                <p className="text-lg font-semibold text-black cursor-auto my-3">Starting from 5.99€</p>
                                 <div className="ml-auto"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                     fill="currentColor" className="bi bi-bag-plus" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
@@ -182,13 +125,10 @@ export const Products = () => {
                         <img src="https://images.unsplash.com/photo-1649261191624-ca9f79ca3fc6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NDd8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
                             alt="Product" className="h-80 w-72 object-cover rounded-t-xl" />
                         <div className="px-4 py-3 w-72">
-                            <span className="text-gray-400 mr-3 uppercase text-xs">Brand</span>
-                            <p className="text-lg font-bold text-black truncate block capitalize">Product Name</p>
+                            <span className="text-gray-400 mr-3 uppercase text-xs">Mug</span>
+                            <p className="text-lg font-bold text-black truncate block capitalize">I'm Not Lazy</p>
                             <div className="flex items-center">
-                                <p className="text-lg font-semibold text-black cursor-auto my-3">$149</p>
-                                <del>
-                                    <p className="text-sm text-gray-600 cursor-auto ml-2">$199</p>
-                                </del>
+                                <p className="text-lg font-semibold text-black cursor-auto my-3">Starting from 5.99€</p>
                                 <div className="ml-auto"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                     fill="currentColor" className="bi bi-bag-plus" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
@@ -208,13 +148,10 @@ export const Products = () => {
                         <img src="https://images.unsplash.com/photo-1649261191606-cb2496e97eee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
                             alt="Product" className="h-80 w-72 object-cover rounded-t-xl" />
                         <div className="px-4 py-3 w-72">
-                            <span className="text-gray-400 mr-3 uppercase text-xs">Brand</span>
-                            <p className="text-lg font-bold text-black truncate block capitalize">Product Name</p>
+                            <span className="text-gray-400 mr-3 uppercase text-xs">Tote Bag</span>
+                            <p className="text-lg font-bold text-black truncate block capitalize">I'm Not Lazy</p>
                             <div className="flex items-center">
-                                <p className="text-lg font-semibold text-black cursor-auto my-3">$149</p>
-                                <del>
-                                    <p className="text-sm text-gray-600 cursor-auto ml-2">$199</p>
-                                </del>
+                                <p className="text-lg font-semibold text-black cursor-auto my-3">Starting from 4.99€</p>
                                 <div className="ml-auto"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                     fill="currentColor" className="bi bi-bag-plus" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
@@ -230,7 +167,31 @@ export const Products = () => {
 
             </section>
 
+
+
             {/* <!-- 🛑 Grid Section - Ends Here --> */}
+            <div className="carousel carousel-center rounded-box">
+                <div className="carousel-item">
+                    <img src={ropa} alt="Pizza" style={{ width: "300px", height: "300px" }} />
+                </div>
+                <div className="carousel-item">
+                    <img src={tote} alt="Pizza" style={{ width: "300px", height: "300px" }} />
+                </div>
+                <div className="carousel-item">
+                    <img src={mug} alt="Pizza" style={{ width: "300px", height: "300px" }} />
+                </div>
+                <div className="carousel-item">
+                    <img src={phone} alt="Pizza" style={{ width: "300px", height: "300px" }} />
+                </div>
+                <div className="carousel-item">
+                    <img src={acrylic} alt="Pizza" style={{ width: "300px", height: "300px" }} />
+                </div>
+            </div>
+            <div className='container text-center mx-auto my-9'>
+                <p className='sm:text-4xl  text-2xl mb-3 font-bold'>Do you have some questions?</p>
+                <p className='sm:text-2xl text-md mb-5 '>Contact us and we sill assist you with anything you need!</p>
+                <button className='btn btn-lg bg-SuperPink text-white hover:bg-SkyBlue'><Link to='/contact'>Contact us</Link></button>
+            </div>
 
         </div>
     )

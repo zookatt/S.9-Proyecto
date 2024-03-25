@@ -1,15 +1,20 @@
+//import { db, auth } from "../firebase/firebase"
 import { useContext } from "react";
 import { authContext } from "../context/authContext";
+
 import { doSignInWithEmailAndPassword } from "../firebase/auth";
+//import { getFirestore, doc, getDoc } from "firebase/firestore";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 
 export const Login = () => {
 
+
     const { updateUserLoggedIn } = useContext(authContext);
     const navigate = useNavigate();
 
+    const [name, setName] = useState('')
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isLoggingIn, setIsLoggingIn] = useState(false);
@@ -32,7 +37,19 @@ export const Login = () => {
             setIsLoggingIn(true);
             try {
                 await doSignInWithEmailAndPassword(email, password);
-                updateUserLoggedIn({ name: email });
+                updateUserLoggedIn({ name, email, password });
+                // const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                // const user = userCredential.user;
+
+                // // Retrieve user's name from Firestore
+                // const userDoc = await getDoc(doc(db, "users", user.uid));
+                // const userData = userDoc.data();
+
+                // if (userData) {
+                //     const userName = userData.name;
+                //     // Update user context with name
+                //     updateUserLoggedIn({ name: userName, email: email, password: password });
+                // }
                 setAlertMessage(`Welcome back to Torino Print, ${email}!`);
                 setAlertType('bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md');
                 setShowAlert(true);
@@ -50,6 +67,7 @@ export const Login = () => {
             setAlertType('alert-danger');
             setShowAlert(true);
         }
+
     };
 
     const validateEmail = (email) => {
@@ -76,6 +94,11 @@ export const Login = () => {
                         )}
                         {!showAlert && (
                             <>
+                                {/* <div className="mb-4">
+                                    <p className="text-gray-700 text-start mb-2">Your name</p>
+
+                                    <input type="name" placeholder="name" className="bg-gray-200 px-4 py-2 rounded-md w-full" autoComplete="name" required value={name} onChange={(e) => { setName(e.target.value) }} />
+                                </div> */}
                                 <div className="mb-4">
                                     <p className="text-gray-700 text-start mb-2">Your email</p>
 

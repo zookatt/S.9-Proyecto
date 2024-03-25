@@ -6,8 +6,8 @@ import sub from '../assets/images/sub.png';
 export const About = () => {
 
     return (
-        <div className="container mx-auto">
-            <h1 className="sm:text-9xl text-7xl font-bold" style={{
+        <div className="container mx-auto mt-5">
+            <h1 className="sm:text-6xl text-7xl font-bold mb-5" style={{
                 background: 'linear-gradient(to right, #0B4E9C 30%, #E8D20E 50%, #D71987 90%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent'
@@ -33,15 +33,27 @@ export const About = () => {
                     <div className='sm:w-1/2 flex justify-center '><img src={dtg} alt="" style={{ width: "500px" }} /></div>
                     <div className='sm:w-1/2 flex flex-col justify-center items-center'>
                         <div className=' mb-5'>
-                            <h1 className='text-3xl text-start'>WHAT IS IT</h1>
+                            <h1 className='text-3xl text-start' style={{
+                                background: 'linear-gradient(to right, #0B4E9C 30%, #E8D20E 50%, #D71987 90%)',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent'
+                            }}>WHAT IS IT</h1>
                             <p className='text-start mt-3'> DTG printing directly applies ink onto garments using specialized printers, allowing for detailed, full-color designs without the need for screens or plates.</p>
                         </div>
                         <div className=' mb-5'>
-                            <h1 className='text-3xl text-start'>HOW WE DO IT</h1>
+                            <h1 className='text-3xl text-start' style={{
+                                background: 'linear-gradient(to right, #0B4E9C 30%, #E8D20E 50%, #D71987 90%)',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent'
+                            }}>HOW WE DO IT</h1>
                             <p className='text-start mt-3 mb-3'> Designs are digitally printed onto garments using DTG printers, providing high-quality, precise prints with vibrant colors and soft textures.</p>
                         </div>
                         <div className=' mb-5'>
-                            <h1 className='text-3xl text-start'>PRODUCTS</h1>
+                            <h1 className='text-3xl text-start' style={{
+                                background: 'linear-gradient(to right, #0B4E9C 30%, #E8D20E 50%, #D71987 90%)',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent'
+                            }}>PRODUCTS</h1>
                             <p className='text-start  mt-3 mb-3'> DTG printing is ideal for cotton and cotton-blend garments, making it perfect for T-shirts, sweatshirts, and other apparel requiring complex designs.</p>
                         </div>
                     </div>
@@ -56,15 +68,27 @@ export const About = () => {
                 <div className='flex flex-col sm:flex-row'>
                     <div className='sm:w-1/2  flex flex-col justify-center items-center'>
                         <div className=' mb-5'>
-                            <h1 className='text-3xl text-start '>WHAT IS IT</h1>
+                            <h1 className='text-3xl text-start' style={{
+                                background: 'linear-gradient(to right, #0B4E9C 30%, #E8D20E 50%, #D71987 90%)',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent'
+                            }}>WHAT IS IT</h1>
                             <p className='text-start mt-3'> DTF printing involves transferring designs from a specialized film onto garments using heat and pressure, resulting in vibrant, detailed prints.</p>
                         </div>
                         <div className=' mb-5'>
-                            <h1 className='text-3xl text-start'>HOW WE DO IT</h1>
+                            <h1 className='text-3xl text-start' style={{
+                                background: 'linear-gradient(to right, #0B4E9C 30%, #E8D20E 50%, #D71987 90%)',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent'
+                            }}>HOW WE DO IT</h1>
                             <p className='text-start mt-3 mb-3'> Designs are printed onto a special film, then transferred onto garments with a heat press, allowing for intricate detail and vivid colors.</p>
                         </div>
                         <div className=' mb-5'>
-                            <h1 className='text-3xl text-start'>PRODUCTS</h1>
+                            <h1 className='text-3xl text-start' style={{
+                                background: 'linear-gradient(to right, #0B4E9C 30%, #E8D20E 50%, #D71987 90%)',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent'
+                            }}>PRODUCTS</h1>
                             <p className='text-start  mt-3 mb-3'> DTF printing is suitable for various fabrics, including cotton, polyester, and blends, making it ideal for T-shirts, hoodies, and more.</p>
                         </div>
                     </div>
@@ -79,15 +103,27 @@ export const About = () => {
                     <div className='sm:w-1/2 flex justify-center'><img src={sub} alt="" style={{ width: "500px" }} /></div>
                     <div className='sm:w-1/2 flex flex-col justify-center items-center'>
                         <div className=' mb-5'>
-                            <h1 className='text-3xl text-start '>WHAT IS IT</h1>
+                            <h1 className='text-3xl text-start' style={{
+                                background: 'linear-gradient(to right, #0B4E9C 30%, #E8D20E 50%, #D71987 90%)',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent'
+                            }} >WHAT IS IT</h1>
                             <p className='text-start mt-3'> Sublimation printing involves transferring designs from a special ink onto a substrate using heat, resulting in permanent, vibrant prints that are embedded into the material.</p>
                         </div>
                         <div className=' mb-5'>
-                            <h1 className='text-3xl text-start'>HOW WE DO IT</h1>
+                            <h1 className='text-3xl text-start' style={{
+                                background: 'linear-gradient(to right, #0B4E9C 30%, #E8D20E 50%, #D71987 90%)',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent'
+                            }}>HOW WE DO IT</h1>
                             <p className='text-start mt-3 mb-3'> Designs are printed onto sublimation paper with specialized inks, then heat transferred onto polyester-based substrates, such as garments, mugs, and phone cases.</p>
                         </div>
                         <div className=' mb-5'>
-                            <h1 className='text-3xl text-start'>PRODUCTS</h1>
+                            <h1 className='text-3xl text-start' style={{
+                                background: 'linear-gradient(to right, #0B4E9C 30%, #E8D20E 50%, #D71987 90%)',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent'
+                            }}>PRODUCTS</h1>
                             <p className='text-start  mt-3 mb-3'> Sublimation printing works best on polyester-based products, including apparel, mugs, mousepads, and other items requiring all-over or full-color designs.</p>
                         </div>
                     </div>
@@ -152,7 +188,7 @@ export const About = () => {
                     <div className="collapse collapse-arrow  mb-3">
                         <input type="radio" name="my-accordion-2" />
                         <div className="collapse-title text-xl font-medium">
-                            #6 Which color of a T-Shirt i can choose?
+                            #6 Which color of a T-Shirt I can choose?
                         </div>
                         <div className="collapse-content">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum aspernatur tenetur recusandae odio vel eum laudantium dolor velit! Totam corrupti nesciunt ex exercitationem perferendis possimus minus non vel aliquid debitis.</p>
