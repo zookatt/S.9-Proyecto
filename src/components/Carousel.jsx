@@ -25,16 +25,16 @@ export const Carousel = () => {
                     transform: `translateX(-${current * 100}%)`,
                 }}
             >
-                {images.map((s) => {
-                    return <img src={s} />;
+                {images.map((s, index) => {
+                    return <img key={index} src={s} alt={`slide-${index}`} />;
                 })}
             </div>
 
-            <div className="absolute top-0 hidden h-full w-full justify-between items-center flex text-white px-10 text-3xl">
-                <button onClick={previousSlide}>
+            <div className="absolute top-0 h-full w-full justify-between items-center flex text-white px-10 text-3xl hidden md:flex">
+                <button onClick={previousSlide} >
                     <img src={back} alt="back" style={{ width: "30px" }} />
                 </button>
-                <button onClick={nextSlide}>
+                <button onClick={nextSlide} >
                     <img src={next} alt="next" style={{ width: "30px" }} />
                 </button>
             </div>
