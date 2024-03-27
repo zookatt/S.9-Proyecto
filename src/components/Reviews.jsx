@@ -26,12 +26,11 @@ export const Reviews = () => {
                                 {`"${customer.review}"`}
                             </div>
                             <div className="rating mb-1">
-                                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" disabled />
-                                <input type="radio " name="rating-2" className="mask mask-star-2 bg-orange-400" disabled />
-                                <input type="radio " name="rating-2" className="mask mask-star-2 bg-orange-400" disabled />
-                                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" disabled />
-                                <input type="radio " name="rating-2" className="mask mask-star-2 bg-orange-400" disabled />
-
+                                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" disabled checked />
+                                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" disabled checked />
+                                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" disabled checked />
+                                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" disabled checked />
+                                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" disabled checked />
                             </div>
                             <div className="flex justify-center">
                                 <a href='https://shorturl.at/bdzO0'><img src={google} alt="" draggable="false" className='w-[150px]' /></a>

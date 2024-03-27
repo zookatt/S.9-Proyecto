@@ -7,9 +7,9 @@ import logoShirt from "./logo-tshirt.png";
 import stylishShirt from "./stylish-tshirt.png";
 
 import sagrada from "./sagrada.png";
-import lama from "./lama.png";
+
 import red from "./red.png";
 import capy from "./capy.png";
 import ring from "./ring.png";
 
-export { galery, fileIcon, swatch, download, logoShirt, stylishShirt, sagrada, lama, red, capy, ring};
+export { galery, fileIcon, swatch, download, logoShirt, stylishShirt, sagrada,  red, capy, ring};

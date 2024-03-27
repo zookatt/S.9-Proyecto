@@ -1,4 +1,4 @@
-import { swatch, fileIcon, galery, logoShirt, stylishShirt, sagrada, capy, red, lama, ring } from "../assets";
+import { swatch, fileIcon, galery, logoShirt, stylishShirt, sagrada, capy, red,  ring } from "../assets";
 
 
 export const EditorTabs = [
@@ -46,11 +46,7 @@ export const GalleryImages = [
     src: capy, 
     title: 'Capy'
    },
-  { 
-    id: 2, 
-    src: lama, 
-    title: 'lama' 
-  },
+  
  
   { 
     id: 3, 
