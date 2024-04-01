@@ -6,6 +6,7 @@ export const doCreateUserWithEmailAndPassword = async (email, password) => {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     // Send email verification after user creation
     await sendVerificationEmail(userCredential.user);
+   
     return userCredential;
   } catch (error) {
     throw error;

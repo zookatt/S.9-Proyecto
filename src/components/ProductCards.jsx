@@ -1,9 +1,9 @@
-
-
 import ropa from '../assets/images/ropa.jpg'
 import tote from '../assets/images/tote.jpg'
 import mug from '../assets/images/mug.jpg'
 import phone from '../assets/images/phone.jpg'
+
+import { Link } from 'react-router-dom'
 
 export const ProductCards = () => {
 
@@ -19,7 +19,7 @@ export const ProductCards = () => {
                         <p className=' font-bold'>Starting from 16.99€</p>
                         <p>Wear your personality, not just a shirt.</p>
                         <div className="card-actions justify-center">
-                            <button className="btn btn-sm btn-primary">See more</button>
+                            <Link to="/products"><button className="btn sm:btn-md btn-sm text-white hover:bg-SkyBlue bg-SuperPink">See more</button></Link>
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@ export const ProductCards = () => {
                         <p className=' font-bold'>Starting from 4.99€</p>
                         <p>Carry your essentials with flair, wherever you go.</p>
                         <div className="card-actions justify-center">
-                            <button className="btn btn-sm btn-primary">See more</button>
+                            <Link to="/products"><button className="btn sm:btn-md btn-sm text-white hover:bg-SkyBlue bg-SuperPink">See more</button></Link>
                         </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@ export const ProductCards = () => {
                         <p className=' font-bold'>Starting from 5.99€</p>
                         <p> Sip on inspiration with every coffee break.</p>
                         <div className="card-actions justify-center">
-                            <button className="btn btn-sm btn-primary">See more</button>
+                            <Link to="/products"><button className="btn sm:btn-md btn-sm text-white hover:bg-SkyBlue bg-SuperPink">See more</button></Link>
                         </div>
                     </div>
                 </div>
@@ -52,7 +52,7 @@ export const ProductCards = () => {
                         <p className=' font-bold'>Starting from 6.99€</p>
                         <p>Protect your device in style, because your phone deserves it.</p>
                         <div className="card-actions justify-center">
-                            <button className="btn btn-sm btn-primary">See more</button>
+                            <Link to="/products"><button className="btn sm:btn-md btn-sm text-white hover:bg-SkyBlue bg-SuperPink">See more</button></Link>
                         </div>
                     </div>
                 </div>
