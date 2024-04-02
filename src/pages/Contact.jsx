@@ -1,4 +1,3 @@
-import { FooterBottom } from "../components/FooterBottom"
 
 import { useState } from "react"
 import { addDoc, collection } from "firebase/firestore"
@@ -8,6 +7,7 @@ import send from "../assets/images/send.gif"
 export const Contact = () => {
 
     const [imageUrl, setImageUrl] = useState("");
+
     const openModal = () => {
         document.getElementById('my_modal_3').showModal();
     };
@@ -23,7 +23,8 @@ export const Contact = () => {
             email: email,
             subject: subject,
             message: message,
-            image: imageUrl // Use imageUrl state here
+            image: imageUrl
+            // Use imageUrl state here
         };
 
         // Function to save to Firestore
@@ -44,8 +45,6 @@ export const Contact = () => {
         const refArchive = ref(storage, `documents/${archiveI.name}`);
         await uploadBytes(refArchive, archiveI);
         urlImg = await getDownloadURL(refArchive);
-
-        // Update the imageUrl state with the URL of the uploaded image
         setImageUrl(urlImg);
     };
 
@@ -169,7 +168,7 @@ export const Contact = () => {
 
                             <img src={send} alt="robot" className=' mb-6' style={{ display: "block", margin: "0 auto", width: "200px" }} />
                             <h2 className="text-2xl font-bold mb-4">Your email has been sent!</h2>
-                            <p className="text-gray-700 mb-2">Thank you for youe message. We'll be back with you soon.</p>
+                            <p className="text-gray-700 mb-2">Thank you for your message. We'll be back with you soon.</p>
                             <form method="dialog" class="flex justify-end">
                                 <button className="btn">Close</button>
                             </form>
