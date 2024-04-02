@@ -27,7 +27,7 @@ export const UserLogged = () => {
                 <div class="border-t border-gray-200">
                     <dl className='flex flex-col sm:flex-row'>
 
-                        <div className="bg-white px-6 py-5 sm:w-1/2">
+                        <div className="bg-white sm:px-6 sm:py-5 px-4 py-5  sm:w-1/2">
                             <dt className="text-sm font-medium text-gray-500">
                                 Email address
                             </dt>

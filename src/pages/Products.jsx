@@ -32,11 +32,9 @@ export const Products = () => {
                 <h1 className="font-bold text-4xl mb-2">Featured Products</h1>
             </div>
 
-            {/* <!-- ✅ Grid Section - Starts Here 👇 --> */}
             <section id="Projects"
                 className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-5 mb-5">
 
-                {/* <!--   ✅ Product card 1 - Starts Here 👇 --> */}
                 <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
                     <a href="#">
                         <img src={canvas_capy}
@@ -51,9 +49,7 @@ export const Products = () => {
                         </div>
                     </a>
                 </div>
-                {/* <!--   🛑 Product card 1 - Ends Here  -->
 
-                <!--   ✅ Product card 2 - Starts Here 👇 --> */}
                 <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
                     <a href="#">
                         <img src={peace}
@@ -67,9 +63,7 @@ export const Products = () => {
                         </div>
                     </a>
                 </div>
-                {/* <!--   🛑 Product card 2- Ends Here  -->
 
-                <!--   ✅ Product card 3 - Starts Here 👇 --> */}
                 <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
                     <a href="#">
                         <img src={womens}
@@ -84,9 +78,7 @@ export const Products = () => {
                         </div>
                     </a>
                 </div>
-                {/* <!--   🛑 Product card 3 - Ends Here  -->
 
-                <!--   ✅ Product card 4 - Starts Here 👇 --> */}
                 <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
                     <a href="#">
                         <img src={barcelona}
@@ -101,9 +93,7 @@ export const Products = () => {
                         </div>
                     </a>
                 </div>
-                {/* <!--   🛑 Product card 4 - Ends Here  -->
 
-                <!--   ✅ Product card 5 - Starts Here 👇 --> */}
                 <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
                     <a href="#">
                         <img src={lazy}
@@ -118,9 +108,7 @@ export const Products = () => {
                         </div>
                     </a>
                 </div>
-                {/* <!--   🛑 Product card 5 - Ends Here  -->
 
-                <!--   ✅ Product card 6 - Starts Here 👇 --> */}
                 <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
                     <a href="#">
                         <img src={plastic}
@@ -135,13 +123,11 @@ export const Products = () => {
                         </div>
                     </a>
                 </div>
-                {/* <!--   🛑 Product card 6 - Ends Here  --> */}
 
             </section>
 
 
 
-            {/* <!-- 🛑 Grid Section - Ends Here --> */}
             <div className="carousel carousel-center rounded-box mt-9">
                 <div className="carousel-item">
                     <img src={ropa} alt="Pizza" style={{ width: "300px", height: "300px" }} />
@@ -160,9 +146,9 @@ export const Products = () => {
                 </div>
             </div>
             <div className='container text-center mx-auto my-9'>
-                <p className='sm:text-4xl  text-2xl mb-3 font-bold'>Do you have some questions?</p>
-                <p className='sm:text-2xl text-md mb-5 '>Contact us and we sill assist you with anything you need!</p>
-                <button className='btn btn-lg bg-SuperPink text-white hover:bg-SkyBlue'><Link to='/contact'>Contact us</Link></button>
+                <p className='sm:text-4xl  text-2xl mb-3 font-bold'>Need some help?</p>
+                <p className='sm:text-2xl text-md mb-5 '>Contact us and we'll assist you with anything you need!</p>
+                <button className='btn sm:btn-lg sm:btn-md bg-SuperPink text-white hover:bg-SkyBlue'><Link to='/contact'>Contact us</Link></button>
             </div>
 
         </div>

@@ -1,13 +1,13 @@
 import email from '../assets/images/email.png'
 import instagram from '../assets/images/instagram.png'
 import whats from '../assets/images/whats.png'
-
+import { Link } from 'react-router-dom'
 export const FooterBottom = () => {
     return (
         <section className="mt-4 md:flex justify-around md:gap-10 text-white">
 
             <div className='pl-6 mb-4 text-start' >
-                <h2 className='font-bold  hover:text-SuperPink cursor-pointer text-3xl max-w-xs '>Torino Print</h2>
+                <Link to="/"><h2 className='font-bold  hover:text-SuperPink cursor-pointer text-3xl max-w-xs '>Torino Print</h2></Link>
                 <p className='text-white font-bold mt-2' style={{
                     background: 'linear-gradient(to right, #69C7EA 20%, #E8D20E 50%, #D71987 80%)',
                     WebkitBackgroundClip: 'text',
@@ -15,11 +15,11 @@ export const FooterBottom = () => {
                 }}>Choose the design, <br /> we print it for you.</p>
             </div>
             <div className='pl-6 mb-4'>
-                <h2 className='font-bold hover:text-SuperPink cursor-pointer text-2xl max-w-xs  '>Visit us</h2>
+                <a href="https://maps.app.goo.gl/NF1gDD6PexJeXR7w9"><h2 className='font-bold hover:text-SuperPink cursor-pointer text-2xl max-w-xs  '>Visit us</h2></a>
                 <p className='text-white mt-2'>C/ de Mallorca, 370 <br /> Local, Eixample  <br /> 08013 Barcelona</p>
             </div>
             <div className='pl-6 mb-4 '>
-                <h2 className='font-bold  hover:text-SuperPink cursor-pointer text-2xl max-w-xs '>Our contact</h2>
+                <Link to='/contact'><h2 className='font-bold  hover:text-SuperPink cursor-pointer text-2xl max-w-xs '>Our contact</h2></Link>
                 <p className='text-white mt-2'>torinoprint@gmail.com</p>
                 <p className='text-white'>Tel. +34 123 456 789</p>
             </div>

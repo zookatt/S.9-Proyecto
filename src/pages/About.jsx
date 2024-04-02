@@ -136,12 +136,12 @@ export const About = () => {
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent'
             }}>Frequently Asked Questions:</h2>
-            <div className=" flex flex-col sm:flex-row justify-center mx-auto">
+            <div className=" flex flex-col sm:flex-row justify-center mx-auto mt-9">
                 <div className='sm:w-1/2'>
                     <div className="collapse collapse-arrow mt-3 mb-3">
                         <input type="radio" name="my-accordion-2" defaultChecked />
                         <div className="collapse-title text-xl font-medium">
-                            #1 How much time does it takes to print a T-Shirt?
+                            #1 How much time does it take to print a T-Shirt?
                         </div>
                         <div className="collapse-content">
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In eius, reiciendis quibusdam labore fuga voluptates fugit a eveniet laudantium ea ratione laboriosam, optio, tempore rem amet alias? Sunt, numquam nulla?</p>
@@ -159,7 +159,7 @@ export const About = () => {
                     <div className="collapse collapse-arrow  mb-3">
                         <input type="radio" name="my-accordion-2" />
                         <div className="collapse-title text-xl font-medium">
-                            #3 I have a design that i want to print on a T-Shirt. Can you do it?
+                            #3 I have a design that I want to print on a T-Shirt. Can you do it?
                         </div>
                         <div className="collapse-content">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum aspernatur tenetur recusandae odio vel eum laudantium dolor velit! Totam corrupti nesciunt ex exercitationem perferendis possimus minus non vel aliquid debitis.</p>

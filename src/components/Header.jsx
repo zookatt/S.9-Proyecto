@@ -42,10 +42,10 @@ export const Header = () => {
                         </>
                     ) : (
                         <>
-                            <Link to="/login"><button type="button" className="py-2 px-3 inline-flex items-center hover:text-white gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-DarkBlue disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                            <Link to="/login"><button type="button" className="py-2 px-4 inline-flex items-center hover:text-white gap-x-2 text-sm font-bold rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-DarkBlue disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                                 Log In
                             </button></Link>
-                            <Link to="/signup"><button type="button" className="py-2 px-3 inline-flex items-center hover:text-white gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-SuperPink disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                            <Link to="/signup"><button type="button" className="py-2 px-3 inline-flex items-center hover:text-white gap-x-2 text-sm font-bold rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-SuperPink disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                                 Sign Up
                             </button></Link>
                         </>
@@ -54,11 +54,11 @@ export const Header = () => {
                 </div>
                 <div id="navbar-alignment" className={isCollapsed ? "hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:grow-0 sm:basis-auto sm:block sm:order-2" : "hs-collapse overflow-hidden transition-all duration-300 basis-full grow sm:grow-0 sm:basis-auto sm:block sm:order-2"}>
                     <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:mt-0 sm:ps-5">
-                        <Link to="/" className="font-medium text-gray-400 hover:text-DarkBlue dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" aria-current="page">HOME</Link>
-                        <Link to="/about" className="font-medium text-gray-400 hover:text-DarkBlue dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">ABOUT</Link>
-                        <Link to="/design" className="font-medium text-gray-400 hover:text-DarkBlue dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">DESIGN NOW</Link>
-                        <Link to="/products" className="font-medium text-gray-400 hover:text-DarkBlue dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">PRODUCTS</Link>
-                        <Link to="/contact" className="font-medium text-gray-400 hover:text-DarkBlue dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">CONTACT</Link>
+                        <Link to="/" className="font-bold text-gray-800 hover:text-DarkBlue dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" aria-current="page">HOME</Link>
+                        <Link to="/about" className="font-bold text-gray-800 hover:text-DarkBlue dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">ABOUT</Link>
+                        <Link to="/design" className="font-bold text-gray-800 hover:text-DarkBlue dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">DESIGN NOW</Link>
+                        <Link to="/products" className="font-bold text-gray-800 hover:text-DarkBlue dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">PRODUCTS</Link>
+                        <Link to="/contact" className="font-bold text-gray-800 hover:text-DarkBlue dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">CONTACT</Link>
                     </div>
 
                 </div>

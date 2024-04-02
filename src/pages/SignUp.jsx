@@ -126,7 +126,7 @@ export const SignUp = () => {
 
                                 <button onClick={onSubmit} type="submit" disabled={isRegistering} className="bg-SuperPink text-white px-4 py-2 rounded-md w-full">Create an account</button>
 
-                                <p className="text-sm text-center mt-3 font-light text-gray-500">
+                                <p className="text-sm text-center mx-auto mt-3 font-light text-gray-500">
                                     Already have an account? <Link to={'/login'} className="font-medium text-DarkBlue hover:underline">Login here</Link>
                                 </p>
 
