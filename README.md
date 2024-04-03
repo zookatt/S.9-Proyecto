@@ -54,9 +54,11 @@ Torino Print es una plataforma web dedicada a una imprenta de regalos personaliz
 
 ### DevDependencias:
 
-tailwind: Framework de diseño CSS.
-daisyui: Componentes de interfaz de usuario para Tailwind CSS.
-Instalación
+- tailwind: Framework de diseño CSS.
+- daisyui: Componentes de interfaz de usuario para Tailwind CSS.
+
+### Instalación
+
 Para instalar y ejecutar este proyecto localmente, sigue estos pasos:
 
 1. Clona este repositorio.
