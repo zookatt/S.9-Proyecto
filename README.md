@@ -4,6 +4,8 @@
 
 Torino Print es una plataforma web dedicada a una imprenta de regalos personalizados. La empresa se especializa en personalizar camisetas, tazas, carcasas de móviles y otros objetos. El objetivo principal de este proyecto es resaltar los servicios que ofrece Torino Print para usuarios online, así como atraer a la marca mediante un diseño llamativo y componentes que permitan una interacción fácil y divertida con el usuario.
 
+- DEMO del proyecto en vercel: [Torino Print](https://s-9-proyecto.vercel.app/)
+
 ## Páginas Principales:
 
 - Inicio: Esta página da la bienvenida a los usuarios a la web. Destaca con un personalizador de camisetas en 3D, donde el usuario puede cambiar el color de la camiseta y subir su imagen para visualizar cómo se verá la camiseta impresa.
@@ -19,6 +21,8 @@ Torino Print es una plataforma web dedicada a una imprenta de regalos personaliz
 - Iniciar sesión / Registrarse: Los usuarios registrados pueden descargar sus diseños hechos en el personalizador y acceder a su área privada.
 
 - Pie de Página: Incluye un mapa de ubicación de la tienda, datos de contacto y enlaces a las redes sociales.
+
+- Página 404
 
 ## Capturas de Pantalla y Video
 
