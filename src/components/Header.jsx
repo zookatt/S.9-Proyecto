@@ -33,10 +33,10 @@ export const Header = () => {
                         <>
                             <div className='flex gap-2'>
                                 <div className="nav-item">
-                                    <Link to='/user'><span className="nav-link mx-2 flex "><img src={user} alt="user" className='me-3' style={{ width: "20px" }} />My profile</span></Link>
+                                    <Link to='/user'><span className="nav-link mx-2 flex font-bold text-gray-800 "><img src={user} alt="user" className='me-3' style={{ width: "20px" }} />My profile</span></Link>
                                 </div>
                                 <div className="nav-item">
-                                    <button onClick={() => { doSignOut().then(() => { navigate('/') }) }} className='nav-link hover:text-SuperPink'>LOG OUT</button>
+                                    <button onClick={() => { doSignOut().then(() => { navigate('/') }) }} className='nav-link  font-bold text-gray-800 hover:text-SuperPink'>LOG OUT</button>
                                 </div>
                             </div>
                         </>

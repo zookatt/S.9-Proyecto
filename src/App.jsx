@@ -20,6 +20,7 @@ function App() {
       <BrowserRouter>
         <main className="container mx-auto px-6 pt-6">
           <Header />
+
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -35,9 +36,7 @@ function App() {
           </Routes>
 
           <Footer />
-
         </main>
-
       </BrowserRouter>
     </AuthenticationContext>
   )
