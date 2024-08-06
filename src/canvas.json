@@ -1,24 +1,22 @@
-
 [
-    {
-      "id": "01",
-      "img": "canvasfake/lamaverde.png"
-    },
-    {
-      "id": "02",
-      "img": "canvasfake/coffeecode.png"
-    },
-    {
-      "id": "03",
-      "img": "canvasfake/capyrose.png"
-    },
-    {
-      "id": "04",
-      "img": "canvasfake/orange.png"
-    },
-    {
-      "id": "05",
-      "img": "canvasfake/robo.png"
-    }
-    
-  ]
+  {
+    "id": "01",
+    "img": "canvasfake/lamaverde.png"
+  },
+  {
+    "id": "02",
+    "img": "canvasfake/coffeecode.png"
+  },
+  {
+    "id": "03",
+    "img": "canvasfake/capyrose.png"
+  },
+  {
+    "id": "04",
+    "img": "canvasfake/orange.png"
+  },
+  {
+    "id": "05",
+    "img": "canvasfake/robo.png"
+  }
+]

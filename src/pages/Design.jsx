@@ -1,14 +1,11 @@
-
-import { DesignComponent } from '../pages/DesignComponent'
+import { DesignComponent } from "../pages/DesignComponent";
 
 export const Design = () => {
-    return (
-        <div className=''>
+  return (
+    <div className="">
+      <DesignComponent />
 
-            <DesignComponent />
-
-            {/* <a href="https://customizer-three-js-bfxb.vercel.app/"></a> */}
-        </div>
-    )
-}
-
+      {/* <a href="https://customizer-three-js-bfxb.vercel.app/"></a> */}
+    </div>
+  );
+};

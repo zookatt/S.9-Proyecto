@@ -1,5 +1,14 @@
-import { swatch, fileIcon, galery, logoShirt, stylishShirt, sagrada, capy, red,  ring } from "../assets";
-
+import {
+  swatch,
+  fileIcon,
+  galery,
+  logoShirt,
+  stylishShirt,
+  sagrada,
+  capy,
+  red,
+  ring,
+} from "../assets";
 
 export const EditorTabs = [
   {
@@ -39,19 +48,16 @@ export const DecalTypes = {
 };
 
 export const GalleryImages = [
- 
+  {
+    id: 1,
+    src: capy,
+    title: "Capy",
+  },
 
-  { 
-    id: 1, 
-    src: capy, 
-    title: 'Capy'
-   },
-  
- 
-  { 
-    id: 3, 
-    src: sagrada, 
-    title: 'sagrada' 
+  {
+    id: 3,
+    src: sagrada,
+    title: "sagrada",
   },
   // Agrega más imágenes según sea necesario
 ];

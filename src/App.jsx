@@ -1,20 +1,19 @@
-import { Header } from "./components/Header.jsx"
-import { Home } from "./pages/Home.jsx"
-import { Footer } from './components/Footer.jsx'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { About } from "./pages/About.jsx"
-import { SignUp } from "./pages/SignUp.jsx"
-import { Login } from "./pages/Login.jsx"
-import { Products } from "./pages/Products.jsx"
-import { Design } from "./pages/Design.jsx"
-import { Contact } from "./pages/Contact.jsx"
+import { Header } from "./components/Header.jsx";
+import { Home } from "./pages/Home.jsx";
+import { Footer } from "./components/Footer.jsx";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { About } from "./pages/About.jsx";
+import { SignUp } from "./pages/SignUp.jsx";
+import { Login } from "./pages/Login.jsx";
+import { Products } from "./pages/Products.jsx";
+import { Design } from "./pages/Design.jsx";
+import { Contact } from "./pages/Contact.jsx";
 import { AuthenticationContext } from "./context/AuthenticationContext.jsx";
 import { UserLogged } from "./pages/UserLogged.jsx";
 import { NotFound } from "./NotFound.jsx";
 import ProtectedRoute from "./components/ProtectedRoutes.jsx";
 
 function App() {
-
   return (
     <AuthenticationContext>
       <BrowserRouter>
@@ -32,16 +31,14 @@ function App() {
             <Route element={<ProtectedRoute redirectPath="/login" />}>
               <Route path="/user" element={<UserLogged />} />
             </Route>
-            <Route path='*' element={<NotFound />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
 
           <Footer />
         </main>
       </BrowserRouter>
     </AuthenticationContext>
-  )
+  );
 }
 
-export default App
-
-
+export default App;
