@@ -10,7 +10,7 @@ import { Design } from "./pages/Design.jsx";
 import { Contact } from "./pages/Contact.jsx";
 import { AuthenticationContext } from "./context/AuthenticationContext.jsx";
 import { UserLogged } from "./pages/UserLogged.jsx";
-import { NotFound } from "./NotFound.jsx";
+import { NotFound } from "./pages/NotFound.jsx";
 import ProtectedRoute from "./components/ProtectedRoutes.jsx";
 
 function App() {
