@@ -1,7 +1,7 @@
-import ropa from "../assets/images/ropa.jpg";
-import tote from "../assets/images/tote.jpg";
-import mug from "../assets/images/mug.jpg";
-import phone from "../assets/images/phone.jpg";
+import ropa from "../../assets/images/ropa.jpg";
+import tote from "../../assets/images/tote.jpg";
+import mug from "../../assets/images/mug.jpg";
+import phone from "../../assets/images/phone.jpg";
 
 import { Link } from "react-router-dom";
 

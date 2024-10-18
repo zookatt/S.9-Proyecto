@@ -1,6 +1,7 @@
+import PropTypes from "prop-types";
 import { useSnapshot } from "valtio";
 
-import state from "../store";
+import state from "../../store";
 
 //switch between Aipicker, ColorPicker y FilePicker
 export const Tab = ({ tab, isFilterTab, isActiveTab, handleClick }) => {
@@ -24,4 +25,14 @@ export const Tab = ({ tab, isFilterTab, isActiveTab, handleClick }) => {
       />
     </div>
   );
+};
+
+Tab.propTypes = {
+  tab: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+  }).isRequired,
+  isFilterTab: PropTypes.bool,
+  isActiveTab: PropTypes.bool,
+  handleClick: PropTypes.func.isRequired,
 };
