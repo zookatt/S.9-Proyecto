@@ -2,8 +2,9 @@ import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { easing } from "maath";
 import { useSnapshot } from "valtio";
+import PropTypes from "prop-types";
 
-import state from "../store";
+import state from "../../store";
 
 export const CameraRig = ({ children }) => {
   const group = useRef();
@@ -36,4 +37,8 @@ export const CameraRig = ({ children }) => {
   });
 
   return <group ref={group}>{children}</group>;
+};
+
+CameraRig.propTypes = {
+  children: PropTypes.node.isRequired,
 };

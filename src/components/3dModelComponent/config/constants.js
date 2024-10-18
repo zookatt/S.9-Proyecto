@@ -1,14 +1,4 @@
-import {
-  swatch,
-  fileIcon,
-  galery,
-  logoShirt,
-  stylishShirt,
-  sagrada,
-  capy,
-  red,
-  ring,
-} from "../assets";
+import { swatch, fileIcon, logoShirt, sagrada, capy } from "../../../assets";
 
 export const EditorTabs = [
   {

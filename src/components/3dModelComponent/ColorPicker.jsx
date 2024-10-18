@@ -1,8 +1,7 @@
-import React from "react";
 import { TwitterPicker } from "react-color";
 import { useSnapshot } from "valtio";
 
-import state from "../store";
+import state from "../../store";
 
 export const ColorPicker = () => {
   const snap = useSnapshot(state);

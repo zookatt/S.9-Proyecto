@@ -1,6 +1,6 @@
-import { MainArticle } from "../components/MainArticle.jsx";
-import { ProductCards } from "../components/ProductCards.jsx";
-import { Reviews } from "../components/Reviews.jsx";
+import { MainArticle } from "../components/orgamisms/MainArticle.jsx";
+import { ProductCards } from "../components/molecules/ProductCards.jsx";
+import { Reviews } from "../components/orgamisms/Reviews.jsx";
 import { useEffect } from "react";
 import cookie from "../assets/images/cookie.png";
 export const Home = () => {

@@ -1,23 +1,29 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import robot from "../assets/images/robot.gif";
 import { useSnapshot } from "valtio";
 
-import { GalleryImages } from "../config/constants";
-
-import config from "../config/config";
 import state from "../store";
 import { download } from "../assets";
-import { downloadCanvasToImage, reader } from "../config/helpers";
-import { EditorTabs, FilterTabs, DecalTypes } from "../config/constants";
-import { fadeAnimation, slideAnimation } from "../config/motion";
+import {
+  downloadCanvasToImage,
+  reader,
+} from "../components/3dModelComponent/config/helpers";
+import {
+  EditorTabs,
+  FilterTabs,
+  DecalTypes,
+} from "../components/3dModelComponent/config/constants";
+import {
+  fadeAnimation,
+  slideAnimation,
+} from "../components/3dModelComponent/config/motion";
 import {
   CustomButton,
-  GaleryPicker,
   ColorPicker,
   FilePicker,
   Tab,
-} from "../components";
+} from "../components/3dModelComponent";
 import { storage } from "../firebase/firebase";
 
 import { Link, useNavigate } from "react-router-dom";

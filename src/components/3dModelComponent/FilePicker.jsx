@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 
 import { CustomButton } from "./CustomButton";
 
@@ -39,4 +39,10 @@ export const FilePicker = ({ file, setFile, readFile }) => {
       </div>
     </div>
   );
+};
+
+FilePicker.propTypes = {
+  file: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  setFile: PropTypes.func.isRequired,
+  readFile: PropTypes.func.isRequired,
 };

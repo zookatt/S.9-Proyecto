@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import customersData from "../customers.json";
-import google from "../assets/images/google.png";
+import customersData from "../../customers.json";
+import google from "../../assets/images/google.png";
 
 export const Reviews = () => {
   const [customers, setCustomers] = useState([]); // Define el estado "customers" usando useState

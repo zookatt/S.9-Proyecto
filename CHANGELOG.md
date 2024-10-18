@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.5] - 2024-10-18
+
+### Fixed
+
+- Fixed hover error on Login button en Header
+- Fixed all components to atomic structure
+
 ## [0.0.4] - 2024-10-18
 
 ### Fixed
