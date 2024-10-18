@@ -1,4 +1,4 @@
-import { FooterBottom } from "./FooterBottom";
+import { FooterBottom } from "../molecules/FooterBottom";
 
 export const Footer = () => {
   return (

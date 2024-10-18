@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AuthenticationContext } from "./context/AuthenticationContext.jsx";
 import { Header } from "./components/orgamisms/Header.jsx";
-import { Footer } from "./components/Footer.jsx";
+import { Footer } from "./components/orgamisms/Footer.jsx";
 import ProtectedRoute from "./components/routing/ProtectedRoutes.jsx";
 import { routes } from "./routes";
 
