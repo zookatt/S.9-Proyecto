@@ -12,7 +12,7 @@ import phone from "../assets/images/phone.jpg";
 import acrylic from "../assets/images/acryl.jpg";
 import { Link } from "react-router-dom";
 
-import { Carousel } from "../components/Carousel";
+import { Carousel } from "../components/orgamisms/Carousel";
 
 export const Products = () => {
   return (
@@ -34,14 +34,14 @@ export const Products = () => {
             <img
               src={canvas_capy}
               alt="Product"
-              class="h-80 w-72 object-cover rounded-t-xl"
+              className="h-80 w-72 object-cover rounded-t-xl"
             />
             <div className="px-4 py-3 w-72">
               <span className="text-gray-400 mr-3 uppercase text-xs">
                 T-Shirt
               </span>
               <p className="text-lg font-bold text-black truncate block capitalize">
-                Don't Worry Be Capy
+                Don`t Worry Be Capy
               </p>
               <div className="flex items-center">
                 <p className="text-md  text-black  text-black cursor-auto my-3">
@@ -60,7 +60,9 @@ export const Products = () => {
               className="h-80 w-72 object-cover rounded-t-xl"
             />
             <div className="px-4 py-3 w-72">
-              <span class="text-gray-400 mr-3 uppercase text-xs">T-SHIRT</span>
+              <span className="text-gray-400 mr-3 uppercase text-xs">
+                T-SHIRT
+              </span>
               <p className="text-lg font-bold text-black truncate block capitalize">
                 Peace Was Never An Option
               </p>
@@ -127,7 +129,7 @@ export const Products = () => {
             <div className="px-4 py-3 w-72">
               <span className="text-gray-400 mr-3 uppercase text-xs">Mug</span>
               <p className="text-lg font-bold text-black truncate block capitalize">
-                I'm Not Lazy
+                I`m Not Lazy
               </p>
               <div className="flex items-center">
                 <p className="text-lg font-semibold text-black cursor-auto my-3">
@@ -150,7 +152,7 @@ export const Products = () => {
                 Tote Bag
               </span>
               <p className="text-lg font-bold text-black truncate block capitalize">
-                I'm Not Plastic
+                I`m Not Plastic
               </p>
               <div className="flex items-center">
                 <p className="text-lg font-semibold text-black cursor-auto my-3">
@@ -202,7 +204,7 @@ export const Products = () => {
       <div className="container text-center mx-auto my-9">
         <p className="sm:text-4xl  text-2xl mb-3 font-bold">Need some help?</p>
         <p className="sm:text-2xl text-md mb-5 ">
-          Contact us and we'll assist you with anything you need!
+          Contact us and we`ll assist you with anything you need!
         </p>
         <button className="btn sm:btn-lg sm:btn-md bg-SuperPink text-white hover:bg-SkyBlue">
           <Link to="/contact">Contact us</Link>
