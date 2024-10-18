@@ -64,7 +64,7 @@ Para instalar y ejecutar este proyecto localmente, sigue estos pasos:
 1. Clona este repositorio.
 
 ```
-git clone https://github.com/tuusuario/tuproyecto.git
+git clone https://github.com/zookatt/S.9-Proyecto.git
 ```
 
 2. Navega hasta el directorio del proyecto.
@@ -76,7 +76,7 @@ cd tuproyecto
 3. Instala las dependencias.
 
 ```
-npm install @react-three/fiber @react-three/drei valtio maath react-color
+npm install 
 ```
 
 ## Materiales utiles:
