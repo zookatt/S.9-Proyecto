@@ -1,5 +1,6 @@
+import PropTypes from "prop-types";
 import { useContext } from "react";
-import { authContext } from "../context/authContext";
+import { authContext } from "../../context/authContext";
 import { Navigate, Outlet } from "react-router-dom";
 
 const ProtectedRoute = ({ redirectPath = "/login" }) => {
@@ -10,6 +11,10 @@ const ProtectedRoute = ({ redirectPath = "/login" }) => {
   }
 
   return <Outlet />;
+};
+
+ProtectedRoute.propTypes = {
+  redirectPath: PropTypes.string,
 };
 
 export default ProtectedRoute;
