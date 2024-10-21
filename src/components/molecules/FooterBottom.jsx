@@ -1,41 +1,72 @@
+import styled from "styled-components";
 import SocialLinks from "../atoms/SocialLinks";
 import FooterSection from "../atoms/FooterSection";
 
+// Styled Components
+const FooterBottomWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  padding: 1rem;
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2.5rem;
+    padding: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    gap: 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    gap: 5rem;
+  }
+`;
+
+const GradientText = styled.p`
+  margin-top: 0.5rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #69c7ea 20%, #e8d20e 50%, #d71987 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+
+  @media (min-width: 640px) {
+    text-align: left;
+  }
+`;
+
+// Main Component
 export const FooterBottom = () => {
   return (
-    <section className="mt-4 md:flex justify-around md:gap-10 text-white">
+    <FooterBottomWrapper>
       <FooterSection title="Torino Print" link="/home" isInternalLink>
-        <p
-          className="text-white font-bold mt-2"
-          style={{
-            background:
-              "linear-gradient(to right, #69C7EA 20%, #E8D20E 50%, #D71987 80%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
-        >
+        <GradientText>
           Choose the design, <br /> we print it for you.
-        </p>
+        </GradientText>
       </FooterSection>
 
       <FooterSection
         title="Visit us"
         link="https://maps.app.goo.gl/NF1gDD6PexJeXR7w9"
       >
-        <p className="text-white mt-2">
+        <p>
           C/ de Mallorca, 370 <br /> Local, Eixample <br /> 08013 Barcelona
         </p>
       </FooterSection>
 
       <FooterSection title="Our contact" link="/contact" isInternalLink>
-        <p className="text-white mt-2">torinoprint@gmail.com</p>
-        <p className="text-white">Tel. +34 696 96 96 96</p>
+        <p>torinoprint@gmail.com</p>
+        <p>Tel. +34 696 96 96 96</p>
       </FooterSection>
 
       <FooterSection title="Follow us">
         <SocialLinks />
       </FooterSection>
-    </section>
+    </FooterBottomWrapper>
   );
 };
 

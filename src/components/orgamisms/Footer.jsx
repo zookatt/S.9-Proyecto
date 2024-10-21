@@ -1,23 +1,78 @@
+import styled from "styled-components";
 import { FooterBottom } from "../molecules/FooterBottom";
 
+// Styled Components
+const FooterWrapper = styled.footer`
+  background-color: #0b3d91;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0;
+  padding: 1rem;
+
+  @media (min-width: 768px) {
+    padding: 2rem;
+    margin: 3rem 0;
+  }
+`;
+
+const MapContainer = styled.div`
+  width: 100%;
+  max-width: 1290px;
+  margin: 0 auto;
+  padding: 0.25rem;
+
+  iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 20px;
+    border: none;
+  }
+
+  @media (min-width: 768px) {
+    iframe {
+      height: 450px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    iframe {
+      height: 500px;
+    }
+  }
+`;
+
+const FooterBottomContainer = styled.div`
+  width: 100%;
+  max-width: 1290px;
+  padding: 1rem;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    padding: 1.5rem;
+    text-align: start;
+  }
+`;
+
+// Main Component
 export const Footer = () => {
   return (
-    <footer className="bg-DarkBlue rounded-[20px] justify-evently items-start mb-8 mt-8">
-      <div className="sm:w-full sm:w-1/2 mb-2 mt-4 p-5 mb-0">
+    <FooterWrapper>
+      <MapContainer>
         <iframe
-          className="sm:w-[1200px]  md:h-[450px] md:w-full sm:h-[500px] h-[500px] mx-auto rounded-[20px]"
           title="Mapa de ubicación"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.7553060992404!2d2.1702543765666626!3d41.40112009514261!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a3ed7f13ece3%3A0x605aa28767510871!2sTorino%20Print!5e0!3m2!1ses!2ses!4v1709573277676!5m2!1ses!2ses"
-          style={{ border: 0 }}
           allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
-      </div>
+      </MapContainer>
 
-      <div className="px-4 py-3 text-start">
+      <FooterBottomContainer>
         <FooterBottom />
-      </div>
-    </footer>
+      </FooterBottomContainer>
+    </FooterWrapper>
   );
 };
