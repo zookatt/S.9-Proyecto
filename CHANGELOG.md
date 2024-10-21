@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.6] - 2024-10-18
+
+### Fixed
+
+- Refactor components with styled components
+
 ## [0.0.5] - 2024-10-18
 
 ### Fixed

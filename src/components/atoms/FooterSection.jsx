@@ -1,6 +1,35 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
+// Styled Components
+const SectionWrapper = styled.div`
+  padding: 1rem;
+  text-align: center;
+
+  @media (min-width: 640px) {
+    text-align: left;
+    padding-left: 0;
+  }
+`;
+
+const Title = styled.h2`
+  font-weight: bold;
+  color: inherit;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #ff69b4;
+  }
+
+  @media (min-width: 640px) {
+    font-size: 1.5rem;
+  }
+`;
+
+// Main Component
 const FooterSection = ({ title, children, link, isInternalLink }) => {
   const TitleComponent = link ? (isInternalLink ? Link : "a") : "div";
   const titleProps = link
@@ -10,14 +39,12 @@ const FooterSection = ({ title, children, link, isInternalLink }) => {
     : {};
 
   return (
-    <div className="pl-6 mb-4">
+    <SectionWrapper>
       <TitleComponent {...titleProps}>
-        <h2 className="font-bold hover:text-SuperPink cursor-pointer text-2xl max-w-xs">
-          {title}
-        </h2>
+        <Title>{title}</Title>
       </TitleComponent>
       {children}
-    </div>
+    </SectionWrapper>
   );
 };
 
